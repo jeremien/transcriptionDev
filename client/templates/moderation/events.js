@@ -4,9 +4,9 @@ Template.moderation.events({
 
   "click .delete-transcription": function(){
     //Transcription.remove(this._id);
-    Transcription.remove({
+    /*Transcription.remove({
       _id: this._id
-    });
+    });*/
 
     console.log("delete");
     console.log(this._id);
@@ -15,7 +15,7 @@ Template.moderation.events({
   "click .delete-image": function(){
     Transcription.remove(this._id);
     console.log("delete");
-    console.log(this._id);
+    console.log(this.size);
   },
 
   "click .edit-transcription": function(){
