@@ -1,21 +1,21 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import Images from '/collections/images.js';
-import '/client/templates/images/images.html';
+import '/client/templates/uploadImages/uploadImages.html';
 
 //Meteor.subscribe('files.images.all')
 
-Template.images.onCreated(function () {
+Template.uploadImages.onCreated(function () {
   this.currentUpload = new ReactiveVar(false);
 });
 
-Template.images.helpers({
+Template.uploadImages.helpers({
   currentUpload: function () {
     return Template.instance().currentUpload.get();
   }
 });
 
-Template.images.events({
+Template.uploadImages.events({
   'change #fileInput': function (e, template) {
     if (e.currentTarget.files && e.currentTarget.files[0]) {
       // We upload only one file, in case

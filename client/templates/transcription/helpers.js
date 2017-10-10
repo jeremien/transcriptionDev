@@ -1,7 +1,6 @@
-
-
 Template.transcription.helpers({
-  transcription: function(){
+  
+  transcriptions: function(){
 
     var tab =[];
 
@@ -13,7 +12,8 @@ Template.transcription.helpers({
       var ob={
         type:"image",
         lien:Images.findOne(tabImage[i]._id).link(),
-        date:tabImage[i].meta.date
+        date:tabImage[i].meta.date,
+        _id:tabImage[i]._id
       };
       console.log("link  >>>> "+Images.findOne(tabImage[i]._id).link());
       tab.push(ob);
@@ -27,7 +27,8 @@ Template.transcription.helpers({
       var ob={
         type:"text",
         text:tabText[i].text,
-        date:tabText[i].date
+        date:tabText[i].date,
+        _id:tabText[i]._id
       };
       tab.push(ob);
     }
@@ -47,11 +48,5 @@ Template.transcription.helpers({
     }else{
       return false;
     }
-  },uToHours:function(d){
-    var r = new Date(d).getHours();
-    return r;
-  },uToMinutes:function(d){
-    var r  = new Date(d).getMinutes()
-    return r;
   }
 });

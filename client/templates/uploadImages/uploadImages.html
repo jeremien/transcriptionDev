@@ -1,4 +1,4 @@
-<template name="images">
+<template name="uploadImages">
   {{#with currentUpload}}
     Uploading <b>{{file.name}}</b>:
     <span id="progress">{{progress.get}}%</span>
@@ -6,20 +6,4 @@
     <input id="fileInput" type="file" />
     <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
   {{/with}}
-</template>
-
-
-
-<template name="uploadedFiles">
-  {{#if uploadedFiles.count}}
-    <ul>
-      {{#each file in uploadedFiles.each}}
-        <li>
-          <img src="{{file.link}}">
-        </li>
-      {{/each}}
-    </ul>
-  {{else}}
-    <div>No files uploaded, yet</div>
-  {{/if}}
 </template>

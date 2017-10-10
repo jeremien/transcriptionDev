@@ -1,7 +1,7 @@
 
 
 Template.moderation.helpers({
-  transcription: function(){
+  transcriptions: function(){
 
     var tab =[];
 
@@ -14,7 +14,7 @@ Template.moderation.helpers({
         type:"image",
         lien:Images.findOne(tabImage[i]._id).link(),
         date:tabImage[i].meta.date,
-        _id:tabText[i]._id
+        _id:tabImage[i]._id
       };
       //console.log("link  >>>> "+Images.findOne(tabImage[i]._id).link());
       tab.push(ob);
@@ -48,17 +48,23 @@ Template.moderation.helpers({
     }else{
       return false;
     }
-  },uToHours:function(d){
-    var r = new Date(d).getHours();
-    return r;
-  },uToMinutes:function(d){
-    var r  = new Date(d).getMinutes()
-    return r;
-  },
-  editingTranscription: function(){
-    return Session.equals("currentItem",
-    this._id);
   }
 
 
 });
+
+
+
+Template.render_text.helpers({
+  editingTranscription : function(){
+    var current = Session.get("currentItem")
+    return current == this._id
+    //return Session.equals("currentItem", this._id)
+  }
+})
+
+Template.edit_text.events({
+  "click .annuler-edition" : function() {
+    Session.set("currentItem", null)
+  }
+})

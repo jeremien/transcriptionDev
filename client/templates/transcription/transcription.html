@@ -1,34 +1,20 @@
 <template name="transcription">
 
 
-<div class="form-group">
-    <form>
-      <textarea class="text" rows="4" placeholder="ajouter une transcription"></textarea>
-        <input type="submit" id="validerTranscription" value="envoyer">
-    </form>
-</div>
+{{> ajoutTexte}}
 
-{{> images}}
+
+{{> uploadImages}}
 
   <ul>
-    {{#each transcription}}
+    {{#each transcriptions}}
 
         {{#if typeIs "image" (type)}}
-        <li>
-          <p>IMAGE > </p>
-          <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
-          <img class="imageBloc" src="{{lien}}">
-        </li>
-        <hr>
+          {{> blocImage}}
         {{/if}}
 
         {{#if typeIs "text" (type)}}
-        <li>
-          <p>TEXTE > </p>
-          <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
-          <span class="text">{{text}}</span>
-        </li>
-        <hr>
+          {{> blocText}}
         {{/if}}
 
 
@@ -38,10 +24,20 @@
 
 
 <template name="blocText">
-
+  <li>
+    <p>TEXTE > </p>
+    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
+    <span class="text">{{text}}</span>
+  </li>
+  <hr>
 </template>
 
 
 <template name="blocImage">
-
+  <li>
+    <p>IMAGE > </p>
+    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
+    <img class="imageBloc" src="{{lien}}">
+  </li>
+  <hr>
 </template>

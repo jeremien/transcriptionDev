@@ -1,9 +1,9 @@
 <template name="moderation">
 
-    <ul>
-    {{#each transcription}}
+  <ul>
+    {{#each transcriptions}}
 
-    <!--{{# if editingTranscription}}
+      <!--{{# if editingTranscription}}
 
     <div class="form-group">
         <form class="new-transcription">
@@ -14,31 +14,58 @@
 
     {{else}}-->
 
-        {{#if typeIs "image" (type)}}
-        <li>
-          <p>IMAGE > </p>
-          <button data_id="{{_id}}" class="delete-image">&times;</button>
-          <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
-          <img class="imageBloc" src="{{lien}}">
-        </li>
-        <hr>
-        {{/if}}
+      {{#if typeIs "image" (type)}}
+        {{> render_image}}
+      {{/if}}
 
-        {{#if typeIs "text" (type)}}
-        <li>
-          <p>TEXTE > </p>
-          <button data_id="{{_id}}" class="delete-transcription">&times;</button>
-          <button data_id="{{_id}}" class="edit-transcription">&#33;</button>
-          <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
-          <span class="text">{{text}}</span>
-        </li>
-        <hr>
-        {{/if}}
+      {{#if typeIs "text" (type)}}
+        {{> render_text}}
 
+      {{/if}}
 
-    <!--{{/if}}-->
+      <!--{{/if}}-->
 
     {{/each}}
   </ul>
 
+</template>
+
+<template name="render_image">
+  <li>
+    <p>IMAGE >
+    </p>
+    <button data_id="{{_id}}" class="delete-image">&times;</button>
+    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
+    <img class="imageBloc" src="{{lien}}">
+  </li>
+  <hr>
+</template>
+
+<template name="render_text">
+
+  {{#if editingTranscription}}
+    {{> edit_text}}
+  {{else}}
+    {{> display_text}}
+  {{/if}}
+</template>
+
+<template name="display_text">
+
+<li>
+  <p>TEXTE >
+  </p>
+  <button data_id="{{_id}}" class="delete-transcription">&times;</button>
+  <button data_id="{{_id}}" class="edit-transcription">&#33;</button>
+  <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
+  <span class="text">{{text}}</span>
+</li>
+<hr>
+</template>
+
+<template name="edit_text">
+<input class="new-text" type="text" value="{{text}}" />
+
+<button class="update-text">Valider</button>
+<a href="#" class="annuler-edition">Annuler</a>
 </template>

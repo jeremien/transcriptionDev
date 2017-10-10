@@ -1,3 +1,32 @@
 <template name="publication">
-  page pour publication
+  <ul>
+    {{#each publications}}
+
+        {{#if typeIs "image" (type)}}
+          {{> pubImage}}
+        {{/if}}
+
+        {{#if typeIs "text" (type)}}
+          {{> pubText}}
+        {{/if}}
+
+
+    {{/each}}
+  </ul>
+</template>
+
+<template name="pubText">
+  <li>
+    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
+    <span class="text">{{text}}</span>
+  </li>
+
+</template>
+
+<template name="pubImage">
+  <li>
+    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
+    <img class="imageBloc" src="{{lien}}">
+  </li>
+
 </template>
