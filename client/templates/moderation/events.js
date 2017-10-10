@@ -2,14 +2,15 @@ Session.setDefault("currentItem", null);
 
 Template.moderation.events({
 
-  "click .delete-transcription": function(){
+  "click .delete-transcription": function(e,t){
     //Transcription.remove(this._id);
-    /*Transcription.remove({
-      _id: this._id
-    });*/
 
-    console.log("delete");
-    console.log(this._id);
+    //var id = e.currentTarget.getAttribute("data-id");
+    //console.log("delete");
+    //console.log(this._id);
+
+    var r = Transcription.remove({_id: this._id});
+    console.log("delete result > "+r);
 
   },
   "click .delete-image": function(){

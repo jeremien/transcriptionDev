@@ -13,9 +13,10 @@ Template.moderation.helpers({
       var ob={
         type:"image",
         lien:Images.findOne(tabImage[i]._id).link(),
-        date:tabImage[i].meta.date
+        date:tabImage[i].meta.date,
+        _id:tabText[i]._id
       };
-      console.log("link  >>>> "+Images.findOne(tabImage[i]._id).link());
+      //console.log("link  >>>> "+Images.findOne(tabImage[i]._id).link());
       tab.push(ob);
     }
 
@@ -27,14 +28,14 @@ Template.moderation.helpers({
       var ob={
         type:"text",
         text:tabText[i].text,
-        date:tabText[i].date
+        date:tabText[i].date,
+        _id:tabText[i]._id
       };
       tab.push(ob);
     }
 
     //retour du tableau
     tab = _.sortBy(tab, function(o) { return o.date; })
-
     tab.reverse();
 
     return tab;
