@@ -1,5 +1,5 @@
 Template.transcription.helpers({
-  
+
   transcriptions: function(){
 
     var tab =[];
@@ -28,6 +28,8 @@ Template.transcription.helpers({
         type:"text",
         text:tabText[i].text,
         date:tabText[i].date,
+        nom:tabText[i].nom,
+        sujet:tabText[i].sujet,
         _id:tabText[i]._id
       };
       tab.push(ob);

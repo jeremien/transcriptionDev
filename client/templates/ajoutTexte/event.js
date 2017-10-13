@@ -8,15 +8,16 @@ Template.ajoutTexte.events({
     } else {
 
     var text = template.find('.text').value;
-    //objet.temps = new Date();
-    console.log("submit " + text);
+    var nom = template.find('.select-noms').value;
+    var sujet = template.find('.select-sujets').value;
 
-    var nom = 'bob';
+    console.log("submit " + text + "/" + nom + "/" + sujet);
 
     Transcription.insert({
       text : text,
-      date:Date.now(),
-      nom: nom
+      date : Date.now(),
+      nom : nom,
+      sujet : sujet
     });
 
     // clear

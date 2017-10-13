@@ -3,17 +3,6 @@
   <ul>
     {{#each transcriptions}}
 
-      <!--{{# if editingTranscription}}
-
-    <div class="form-group">
-        <form class="new-transcription">
-          <input type="text" value="{{text}}">
-          <input type="submit" value="Update" id="updateTranscription">
-        </form>
-    </div>
-
-    {{else}}-->
-
       {{#if typeIs "image" (type)}}
         {{> render_image}}
       {{/if}}
@@ -64,7 +53,8 @@
 </template>
 
 <template name="edit_text">
-<input class="new-text" type="text" value="{{text}}" />
+<!--<input class="new-text" type="text" value="{{text}}" />-->
+<textarea class="new-text" rows="8" cols="80" value="{{text}}"></textarea>
 
 <button class="update-text">Valider</button>
 <a href="#" class="annuler-edition">Annuler</a>

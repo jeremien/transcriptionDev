@@ -3,8 +3,11 @@
 
 {{> ajoutTexte}}
 
+<hr>
 
 {{> uploadImages}}
+
+<hr>
 
   <ul>
     {{#each transcriptions}}
@@ -25,9 +28,11 @@
 
 <template name="blocText">
   <li>
-    <p>TEXTE > </p>
-    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
-    <span class="text">{{text}}</span>
+    <p>Transcription : </p>
+    <p class="date">timeline > {{uToHours (date)}}:{{uToMinutes (date)}}</p>
+    <p class="text">texte > {{text}}</p>
+    <p class="text">nom > {{nom}}</p>
+    <p class="text">sujet > {{sujet}}</p>
   </li>
   <hr>
 </template>
@@ -35,8 +40,8 @@
 
 <template name="blocImage">
   <li>
-    <p>IMAGE > </p>
-    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
+    <p>Image : </p>
+    <p class="date">timeline > {{uToHours (date)}}:{{uToMinutes (date)}}</p>
     <img class="imageBloc" src="{{lien}}">
   </li>
   <hr>
