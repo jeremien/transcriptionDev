@@ -11,17 +11,12 @@ Template.ajoutTexte.events({
     //objet.temps = new Date();
     console.log("submit " + text);
 
-    /*
-    var date = new Date();
-    var heure = date.getHours();
-    var minutes = date.getMinutes();
-    console.log(heure + ":" + minutes);
-    var temps = `${heure}:${minutes}`;
-    */
+    var nom = 'bob';
 
     Transcription.insert({
       text : text,
-      date:Date.now()
+      date:Date.now(),
+      nom: nom
     });
 
     // clear
