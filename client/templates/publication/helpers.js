@@ -27,6 +27,7 @@ Template.publication.helpers({
       var ob={
         type:"text",
         text:tabText[i].text,
+        nom:tabText[i].nom,
         date:tabText[i].date,
         _id:tabText[i]._id
       };
