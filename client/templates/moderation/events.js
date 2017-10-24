@@ -1,5 +1,19 @@
 Session.setDefault("currentItem", null);
 
+Template.edit_text.events({
+  "click .annuler-edition" : function() {
+    Session.set("currentItem", null)
+  }
+})
+
+Template.render_text.helpers({
+  editingTranscription : function(){
+    var current = Session.get("currentItem")
+    return current == this._id
+    //return Session.equals("currentItem", this._id)
+  }
+})
+
 Template.moderation.events({
 
   "click .delete-transcription": function(e,t){
