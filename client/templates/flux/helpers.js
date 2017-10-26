@@ -1,6 +1,5 @@
+Template.flux.helpers({
 
-
-Template.moderation.helpers({
   transcriptions: function(){
 
     var tab =[];
@@ -17,7 +16,7 @@ Template.moderation.helpers({
         date:tabImage[i].meta.date,
         _id:tabImage[i]._id
       };
-      //console.log("link  >>>> "+Images.findOne(tabImage[i]._id).link());
+      console.log("link  >>>> "+Images.findOne(tabImage[i]._id).link());
       tab.push(ob);
     }
 
@@ -30,6 +29,8 @@ Template.moderation.helpers({
         type:"text",
         text:tabText[i].text,
         date:tabText[i].meta.date,
+        nom:tabText[i].nom,
+        sujet:tabText[i].sujet,
         _id:tabText[i]._id
       };
       tab.push(ob);
@@ -51,6 +52,7 @@ Template.moderation.helpers({
 
     //retour du tableau
     tab = _.sortBy(tab, function(o) { return o.date; })
+
     tab.reverse();
 
     return tab;
@@ -64,6 +66,4 @@ Template.moderation.helpers({
       return false;
     }
   }
-
-
 });

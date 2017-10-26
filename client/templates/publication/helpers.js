@@ -13,6 +13,7 @@ Template.publication.helpers({
         type:"image",
         lien:Images.findOne(tabImage[i]._id).link(),
         date:tabImage[i].meta.date,
+        texte:tabImage[i].meta.text,
         _id:tabImage[i]._id
       };
       console.log("link  >>>> "+Images.findOne(tabImage[i]._id).link());

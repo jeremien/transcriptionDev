@@ -1,7 +1,7 @@
 Template.dessin.onRendered(function() {
   canvas = document.getElementById('myCanvas');
-  canvas.width = 200;
-  canvas.height = 200;
+  canvas.width = 600;
+  canvas.height = 600;
   context = canvas.getContext('2d');
 
   var tmp  = canvas.getBoundingClientRect();

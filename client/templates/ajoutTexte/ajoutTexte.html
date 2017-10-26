@@ -1,4 +1,4 @@
-<template name="ajoutTexte">
+<!--<template name="ajoutTexte">
   <div class="form-group">
       <form>
         <textarea class="text" rows="4" placeholder="ajouter une transcription"></textarea>
@@ -22,5 +22,32 @@
   <option value="modération">modération</option>
   <option value="intervention">intervention</option>
 </select>
+
+</template>-->
+
+<template name="ajoutTexte">
+
+  <select class="select-noms">
+    <option selected>noms</option>
+    <option value="Carole Brandon">Carole Brandon</option>
+    <option value="Jean-jacques Gay">Jean-jacques Gay</option>
+    <option value="Itzhak Golberg">Itzhak Golberg</option>
+    <option value="Carole Nosella">Carole Nosella</option>
+    <option value="Vincent Duché">Vincent Duché</option>
+    <option value="Vincent Ciciliato">Vincent Ciciliato</option>
+    <option value="David-Olivier Lartigaud">David-Olivier Lartigaud</option>
+  </select>
+
+  <select class="select-sujets">
+    <option selected>sujets</option>
+    <option value="modération">modération</option>
+    <option value="intervention">intervention</option>
+  </select>
+
+  <br><br>
+  <div id="summernote"></div>
+
+  <input type="submit" id="validerTranscription" value="envoyer la transcription">
+
 
 </template>

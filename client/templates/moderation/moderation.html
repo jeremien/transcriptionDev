@@ -26,21 +26,18 @@
 
 <template name="render_image">
   <li>
-    <p>IMAGE >
-    </p>
+
     <button data_id="{{_id}}" class="delete-image">&times;</button>
-    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
     <img class="imageBloc" src="{{lien}}">
+    <p>{{texte}}</p>
   </li>
   <hr>
 </template>
 
 <template name="render_dessin">
   <li>
-    <p>DESSIN >
-    </p>
+
     <button data_id="{{_id}}" class="delete-dessin">&times;</button>
-    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
     <img class="imageBloc" src="{{url}}">
   </li>
   <hr>
@@ -58,12 +55,10 @@
 <template name="display_text">
 
 <li>
-  <p>TEXTE >
-  </p>
+
   <button data_id="{{_id}}" class="delete-transcription">&times;</button>
   <button data_id="{{_id}}" class="edit-transcription">&#33;</button>
-  <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
-  <span class="text">{{text}}</span>
+  <p class="text">{{text}}</p>
 </li>
 <hr>
 </template>

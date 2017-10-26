@@ -3,7 +3,9 @@
     Uploading <b>{{file.name}}</b>:
     <span id="progress">{{progress.get}}%</span>
   {{else}}
+    <textarea class="textImage" rows="2" cols="80" placeholder="commenter l'image"></textarea>
     <input id="fileInput" type="file" />
     <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
+    <input type="submit" id="validerImage" value="envoyer l'image">
   {{/with}}
 </template>
