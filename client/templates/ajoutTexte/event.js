@@ -15,7 +15,9 @@ Template.ajoutTexte.events({
 
     Transcription.insert({
       text : text,
-      date : Date.now(),
+      meta : {
+        date : Date.now()
+      },
       nom : nom,
       sujet : sujet
     });

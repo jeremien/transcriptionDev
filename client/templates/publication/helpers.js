@@ -28,8 +28,22 @@ Template.publication.helpers({
         type:"text",
         text:tabText[i].text,
         nom:tabText[i].nom,
-        date:tabText[i].date,
+        date:tabText[i].meta.date,
         _id:tabText[i]._id
+      };
+      tab.push(ob);
+    }
+
+    //----------------------------------------
+    // DESSIN
+    //----------------------------------------
+    var tabDessin = Dessin.find().fetch();
+    for (var i = 0; i < tabDessin.length; i++) {
+      var ob={
+        type:"dessin",
+        url:tabDessin[i].url,
+        date:tabDessin[i].meta.date,
+        _id:tabDessin[i]._id
       };
       tab.push(ob);
     }

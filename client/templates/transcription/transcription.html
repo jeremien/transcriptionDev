@@ -20,6 +20,10 @@
           {{> blocText}}
         {{/if}}
 
+        {{#if typeIs "dessin" (type)}}
+          {{> blocDessin}}
+        {{/if}}
+
 
     {{/each}}
   </ul>
@@ -43,6 +47,16 @@
     <p>Image : </p>
     <p class="date">timeline > {{uToHours (date)}}:{{uToMinutes (date)}}</p>
     <img class="imageBloc" src="{{lien}}">
+  </li>
+  <hr>
+</template>
+
+
+<template name="blocDessin">
+  <li>
+    <p>Image : </p>
+    <p class="date">timeline > {{uToHours (date)}}:{{uToMinutes (date)}}</p>
+    <img class="imageBloc" src="{{url}}">
   </li>
   <hr>
 </template>

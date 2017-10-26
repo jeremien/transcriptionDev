@@ -97,6 +97,7 @@ ogamedia:timer@0.0.9
 ordered-dict@1.0.9
 ostrio:cookies@2.2.2
 ostrio:files@1.8.3
+ostrio:meteor-root@1.0.6
 planettraining:material-design-icons-font@2.1.1_2
 promise@0.9.0
 raix:eventemitter@0.1.3

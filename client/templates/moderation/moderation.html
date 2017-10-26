@@ -12,6 +12,11 @@
 
       {{/if}}
 
+      {{#if typeIs "dessin" (type)}}
+        {{> render_dessin}}
+
+      {{/if}}
+
       <!--{{/if}}-->
 
     {{/each}}
@@ -26,6 +31,17 @@
     <button data_id="{{_id}}" class="delete-image">&times;</button>
     <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
     <img class="imageBloc" src="{{lien}}">
+  </li>
+  <hr>
+</template>
+
+<template name="render_dessin">
+  <li>
+    <p>DESSIN >
+    </p>
+    <button data_id="{{_id}}" class="delete-dessin">&times;</button>
+    <p class="date">{{uToHours (date)}}:{{uToMinutes (date)}}</p>
+    <img class="imageBloc" src="{{url}}">
   </li>
   <hr>
 </template>

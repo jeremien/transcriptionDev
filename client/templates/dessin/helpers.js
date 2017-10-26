@@ -1,12 +1,19 @@
 Template.dessin.onRendered(function() {
   canvas = document.getElementById('myCanvas');
+  canvas.width = 200;
+  canvas.height = 200;
   context = canvas.getContext('2d');
 
-  width = window.innerWidth;
-  height = window.innerHeight;
+  var tmp  = canvas.getBoundingClientRect();
 
-  canvas.width = width;
-  canvas.height = height;
+  var offsetX = tmp.left;
+  var offsetY = tmp.top;
+
+  //width = window.innerWidth;
+  //height = window.innerHeight;
+
+  // canvas.width = width;
+  // canvas.height = height;
 
   drawing = false;
   var x, y, prevX, prevY;
@@ -22,15 +29,17 @@ Template.dessin.onRendered(function() {
   }
 
   canvas.onmousemove = function(e){
-    x = e.clientX;
-    y = e.clientY;
+    x = e.clientX - offsetX;
+    y = e.clientY - offsetY;
 
-    drawline(context, prevX, prevY, x, y);
-    prevX = x;
-    prevY = y;
+
+    if(drawing){
+      drawline(context, prevX, prevY, x, y);
+      prevX = x;
+      prevY = y;
     console.log("x > " + x)
     console.log("y > " + y)
-
+    }
   }
 
   function drawline(context, x1, y1, x2, y2){
