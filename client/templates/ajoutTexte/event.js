@@ -8,6 +8,8 @@ Template.ajoutTexte.events({
     var html = $('#summernote').summernote('code');
     var nom = template.find('.select-noms').value;
     var sujet = template.find('.select-sujets').value;
+    var pseudo = template.find('.pseudo').value;
+    var tag = template.find('.select-tags-texte').value
 
     if( html === '<p><br></p>' || nom === 'noms' || sujet === 'sujets') {
 
@@ -17,7 +19,7 @@ Template.ajoutTexte.events({
 
       alert("le message est envoyé");
 
-    console.log(html + '\n' + nom  + '\n' + sujet);
+    console.log(html + '\n' + nom  + '\n' + sujet + '\n' + pseudo);
 
     Transcription.insert({
       text:html,
@@ -25,7 +27,9 @@ Template.ajoutTexte.events({
         date : Date.now()
       },
       nom : nom,
-      sujet : sujet
+      sujet : sujet,
+      pseudo : pseudo,
+      tag:tag
     });
 
     $('#summernote').summernote('reset');

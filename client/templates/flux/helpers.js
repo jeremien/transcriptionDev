@@ -31,6 +31,8 @@ Template.flux.helpers({
         date:tabText[i].meta.date,
         nom:tabText[i].nom,
         sujet:tabText[i].sujet,
+        pseudo:tabText[i].pseudo,
+        tag:tabText[i].tag,
         _id:tabText[i]._id
       };
       tab.push(ob);
