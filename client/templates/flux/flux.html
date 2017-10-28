@@ -27,7 +27,8 @@
   <p class="date">timeline >
     {{uToHours (date)}}:{{uToMinutes (date)}}</p>
   <p class="text">texte >
-    {{{text}}}</p>
+    {{#markdown}} {{text}} {{/markdown}}
+  </p>
   <p class="text">nom >
     {{nom}}</p>
   <p class="text">sujet >
@@ -48,7 +49,7 @@
     {{uToHours (date)}}:{{uToMinutes (date)}}</p>
   <img class="imageBloc" src="{{lien}}">
   <p>texte >
-    {{texte}}</p>
+  {{#markdown}} {{text}} {{/markdown}}</p>
 </li>
 <hr>
 </template>

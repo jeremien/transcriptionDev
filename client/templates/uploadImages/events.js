@@ -18,10 +18,10 @@ Template.uploadImages.events({
   'click #validerImage': function (e, template) {
 
     var file = template.find('#fileInput').files[0];
-    var texte = template.find('.textImage').value;
+    var text = template.find('.textImage').value;
 
     console.log(file);
-    console.log(texte);
+    console.log(text);
 
     if(file){
 
@@ -48,7 +48,7 @@ Template.uploadImages.events({
           {
             $set:{
               "meta.date":utc,
-              "meta.text":texte
+              "meta.text":text
             }
           });
         window.alert('File "' + fileObj.name + '" successfully uploaded');

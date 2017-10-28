@@ -1,17 +1,17 @@
-
-
 Template.ajoutTexte.events({
   // envoi des transcriptions
-  "click #validerTranscription": function(event,template){
+  "click #validerTranscription": function(event, template) {
     event.preventDefault();
 
-    var html = $('#summernote').summernote('code');
+    //var html = $('#summernote').summernote('code');
+    var markdown = template.find('.text-markdown').value;
     var nom = template.find('.select-noms').value;
     var sujet = template.find('.select-sujets').value;
     var pseudo = template.find('.pseudo').value;
     var tag = template.find('.select-tags-texte').value
 
-    if( html === '<p><br></p>' || nom === 'noms' || sujet === 'sujets') {
+    //if (html === '<p><br></p>' || nom === 'noms' || sujet === 'sujets') {
+    if (markdown === '') {
 
       alert("ecrivez un message, sélectionner un nom et un sujet");
 
@@ -19,20 +19,21 @@ Template.ajoutTexte.events({
 
       alert("le message est envoyé");
 
-    console.log(html + '\n' + nom  + '\n' + sujet + '\n' + pseudo);
+      console.log(markdown + '\n' + nom + '\n' + sujet + '\n' + pseudo);
 
-    Transcription.insert({
-      text:html,
-      meta : {
-        date : Date.now()
-      },
-      nom : nom,
-      sujet : sujet,
-      pseudo : pseudo,
-      tag:tag
-    });
+      Transcription.insert({
+        text: markdown,
+        meta: {
+          date: Date.now()
+        },
+        nom: nom,
+        sujet: sujet,
+        pseudo: pseudo,
+        tag: tag
+      });
 
-    $('#summernote').summernote('reset');
+      template.find('.text-markdown').value = '';
+      //$('#summernote').summernote('reset');
     }
   }
 });

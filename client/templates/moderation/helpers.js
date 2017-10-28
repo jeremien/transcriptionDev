@@ -13,7 +13,7 @@ Template.moderation.helpers({
       var ob={
         type:"image",
         lien:Images.findOne(tabImage[i]._id).link(),
-        texte:tabImage[i].meta.text,
+        text:tabImage[i].meta.text,
         date:tabImage[i].meta.date,
         _id:tabImage[i]._id
       };

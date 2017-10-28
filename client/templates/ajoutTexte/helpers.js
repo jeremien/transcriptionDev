@@ -1,4 +1,4 @@
-Template.ajoutTexte.onRendered(function(){
+/*Template.ajoutTexte.onRendered(function(){
     $('#summernote').summernote({
       height: 200,
       placeholder: 'écrivez votre transcription',
@@ -13,4 +13,4 @@ Template.ajoutTexte.onRendered(function(){
 Template.ajoutTexte.onDestroyed(function(){
   console.log('destroy')
   $('#summernote').summernote('destroy');
-});
+});*/
