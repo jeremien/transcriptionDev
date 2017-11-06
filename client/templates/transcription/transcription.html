@@ -1,10 +1,16 @@
 <template name="transcription">
 
+<div class="tab">
+  <button class="tablinks" id="buttonTexte">Ajouter du texte</button>
+  <button class="tablinks" id="buttonImage">Ajouter une image</button>
+</div>
 
-{{> ajoutTexte}}
+<div id="ajoutTexte" class="tabcontent">
+  {{> ajoutTexte}}
+</div>
 
-<hr>
-
-{{> uploadImages}}
+<div id="ajoutImages" class="tabcontent">
+  {{> uploadImages}}
+</div>
 
 </template>
