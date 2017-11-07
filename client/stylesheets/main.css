@@ -1,5 +1,19 @@
+
+body {
+  font-family:'Anarchy Book', sans-serif;
+}
+
+
 .form-group {
   margin-top: 5%;
+}
+
+.col-md-12 {
+  margin-top: 5%;
+}
+
+ul {
+
 }
 
 li {

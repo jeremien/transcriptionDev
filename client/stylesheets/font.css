@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Anarchy Normal';
+    src: url('fonts/Anarchy-ItalicNormal.eot');
+    src: url('fonts/Anarchy-ItalicNormal.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Anarchy-ItalicNormal.woff') format('woff'),
+        url('fonts/Anarchy-ItalicNormal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Anarchy Book';
+    src: url('/fonts/anarchy/Anarchy-Book.eot');
+    src: url('/fonts/anarchy/Anarchy-Book.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/anarchy/Anarchy-Book.woff') format('woff'),
+        url('/fonts/anarchy/Anarchy-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anarchy Normal';
+    src: url('Anarchy-Normal.eot');
+    src: url('Anarchy-Normal.eot?#iefix') format('embedded-opentype'),
+        url('Anarchy-Normal.woff') format('woff'),
+        url('Anarchy-Normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anarchy Book';
+    src: url('Anarchy-BookItalic.eot');
+    src: url('Anarchy-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('Anarchy-BookItalic.woff') format('woff'),
+        url('Anarchy-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+	font-family: 'Computer Modern Concrete';
+	src: url('cmunorm.eot');
+	src: url('cmunorm.eot?#iefix') format('embedded-opentype'),
+		 url('cmunorm.woff') format('woff'),
+		 url('cmunorm.ttf') format('truetype'),
+		 url('cmunorm.svg#cmunorm') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Computer Modern Concrete';
+	src: url('cmunobx.eot');
+	src: url('cmunobx.eot?#iefix') format('embedded-opentype'),
+		 url('cmunobx.woff') format('woff'),
+		 url('cmunobx.ttf') format('truetype'),
+		 url('cmunobx.svg#cmunobx') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Computer Modern Concrete';
+	src: url('cmunoti.eot');
+	src: url('cmunoti.eot?#iefix') format('embedded-opentype'),
+		 url('cmunoti.woff') format('woff'),
+		 url('cmunoti.ttf') format('truetype'),
+		 url('cmunoti.svg#cmunoti') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+@font-face {
+	font-family: 'Computer Modern Concrete';
+	src: url('cmunobi.eot');
+	src: url('cmunobi.eot?#iefix') format('embedded-opentype'),
+		 url('cmunobi.woff') format('woff'),
+		 url('cmunobi.ttf') format('truetype'),
+		 url('cmunobi.svg#cmunobi') format('svg');
+	font-weight: bold;
+	font-style: italic;
+}
