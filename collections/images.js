@@ -6,9 +6,9 @@ Meteor.h="";
   debug: true,
   collectionName: 'Images',
   allowClientCode: true,
-  storagePath: () => {
+  /*storagePath: () => {
       return `${process.env.PWD}/data/img`;
-  },
+  },*/
   onBeforeUpload: function(file) {
       if(file.size <= 1024 * 1024 * 10 && /png|jpe?g/i.test(file.extension)){
         return true;
@@ -27,3 +27,19 @@ Meteor.h="";
 }*/
 
 export default Images
+
+/*
+Images = new FilesCollection({
+ debug: true,
+ collectionName: 'Images',
+ allowClientCode: true,
+ storagePath: () => {
+     return `${process.env.PWD}/data/img`;
+ },
+ onBeforeUpload: function(file) {
+     if(file.size <= 1024 * 1024 * 10 && /png|jpe?g/i.test(file.extension)){
+       return true;
+     }
+     return 'please upload new file';
+ }
+})*/
