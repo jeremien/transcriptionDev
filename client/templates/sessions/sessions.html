@@ -1,0 +1,33 @@
+<template name="sessions">
+	<h1>Sessions</h1>
+	Titre de la session : <input type="text" name="titre">
+	<button class="add_new_session">Ajouter</button>
+	{{> sessions_list}}
+</template>
+
+
+<template name="sessions_list">
+	<ol>
+		{{#each sessions}}
+			<li>{{> single_session}}</li>
+		{{/each}}
+	</ol>
+</template>
+
+
+<template name="single_session">
+	<div>
+		{{titre}}
+		{{#each posts}}
+			<ul>
+				<li>{{> single_post}}</li>
+			</ul>
+		{{/each}}
+	</div>
+</template>
+
+<template name="single_post">
+	<div>
+		{{titre}}
+	</div>
+</template>
