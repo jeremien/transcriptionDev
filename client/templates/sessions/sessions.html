@@ -1,33 +1,39 @@
 <template name="sessions">
-	<h1>Sessions</h1>
-	Titre de la session : <input type="text" name="titre">
-	<button class="add_new_session">Ajouter</button>
-	{{> sessions_list}}
+	<h1>Chapitres</h1>
+	Titre du chapitre : <input type="text" name="titre">
+	<button class="add_new_chapitre">Ajouter</button>
+	{{> chapitre_list}}
 </template>
 
 
-<template name="sessions_list">
+<template name="chapitre_list">
 	<ol>
-		{{#each sessions}}
-			<li>{{> single_session}}</li>
+		{{#each chapitres}}
+			<li>{{> chapitre}}</li>
 		{{/each}}
 	</ol>
 </template>
 
 
-<template name="single_session">
+<template name="chapitre">
 	<div>
 		{{titre}}
-		{{#each posts}}
-			<ul>
-				<li>{{> single_post}}</li>
-			</ul>
-		{{/each}}
+		<ul>
+			{{#each notes}}
+				<li>{{> note}}</li>
+			{{/each}}
+		</ul>
 	</div>
 </template>
 
-<template name="single_post">
+<template name="note">
 	<div>
 		{{titre}}
+		<ul>
+			{{#each notes}}
+				<li>{{> note}}</li>
+			{{/each}}
+		</ul>
 	</div>
 </template>
+

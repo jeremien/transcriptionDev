@@ -1,7 +1,14 @@
-Template.sessions_list.helpers({
+Template.chapitre_list.helpers({
 
-	sessions : function(){
+	chapitres : function(){
 		return Chapitre.find()
+	}
+	
+})
+Template.note.helpers({
+
+	notes : function(){
+		return []//Note.find()
 	}
 	
 })

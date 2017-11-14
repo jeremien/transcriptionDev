@@ -1,10 +1,23 @@
-Collections["Chapitres"] = new Mongo.Collection('chapitres',{
+Collections["Notes"] = new Mongo.Collection('notes',{
 
-	transform: (doc) => new Chapitre(doc)
+	transform: (doc) => new Note(doc)
 
 });
 
-Chapitre = class Chapitre extends Model {
+/*
+   {
+titre: "",
+sessionçid: ...
+note_ids: []
+}
+
+ */
+
+
+
+
+
+Note = class Note extends Model {
 	constructor(doc){
 		super()
 		_.extend(this, doc);
@@ -13,6 +26,7 @@ Chapitre = class Chapitre extends Model {
 		}
 	}
 
+
 	notes(){
 		if(this.note_ids != undefined && this.note_ids.constructor == Array){
 			return Note.find({_id : {$in : this.note_ids}})
@@ -20,25 +34,11 @@ Chapitre = class Chapitre extends Model {
 			throw new Meteor.Error('Warnning', 'note_ids is not an Array')
 		}
 	}
+
 	add(node_id){
 		this.note_ids.push(node_id)
+		this.save()
 	}
 }
 
 
-
-
-
-/*
-	{
-		_id: MongoID,
-		timestamp: "",
-		Titre: String,
-		frozzen : boolean
-
-	}
-
-
-
-
-*/
