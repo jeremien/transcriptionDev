@@ -1,0 +1,40 @@
+#chapitresBar{
+    position: absolute;
+    background-color: rgb(230, 230, 230);
+
+    top: 50px;
+    width: 200px;
+    height: calc( 100% - 50px );
+
+    padding: 4px;
+}
+
+.chapDiv{
+    margin: 0px;
+    padding: 0px;
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+
+    border-color: rgba(0, 0, 0,0.3);
+    border-width: 1px;
+    border-style: solid;
+
+    cursor: pointer;
+}
+
+.chapDiv:hover{
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+.selectedChap{
+    background-color: rgba(0, 255,0,0.5);
+}
+
+.chapDiv p{
+    font-family: monospace;
+    font-size: 0.9em;
+    margin: 0px;
+    padding: 0px;
+}

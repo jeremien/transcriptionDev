@@ -1,13 +1,13 @@
 Template.registerHelper(
-  "uToHours", (d) => {
+    "uToHours", (d) => {
+        var r = new Date(d).getHours();
+        return r;
+    }
+);
 
-    var r = new Date(d).getHours();
-    return r;
-  });
-
-  Template.registerHelper(
+Template.registerHelper(
     "uToMinutes", (d) => {
-
-      var r  = new Date(d).getMinutes()
-      return r;
-    });
+        var r  = new Date(d).getMinutes()
+        return r;
+    }
+);
