@@ -1,6 +1,12 @@
 Template.chapitresBar.helpers({
 	chapitres : function(){
 		return Chapitre.find().fetch();
+	},isSelectedCapitre:function(id){
+		if(id==selectedChapitre.get()){
+			return "selectedChap";
+		}else{
+			return "";
+		}
 	}
 })
 

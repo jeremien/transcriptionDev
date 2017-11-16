@@ -1,0 +1,29 @@
+#addNote{
+    position: absolute;
+    width: 500px;
+    height: 200px;
+
+    bottom: 5px;
+    left: 210px;
+
+    border-width: thin;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+
+    
+}
+
+.toolBar{
+    position: absolute;
+    background-color: rgb(255, 0, 0);
+    width: 100%;
+    height: 20px;
+}
+
+.textInput{
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
