@@ -1,0 +1,11 @@
+#debug {
+  margin-top : 100px;
+  float: right;
+  width:80%;
+}
+
+
+.my_notes {
+  border: 1px solid black;
+  background-color: red;
+}

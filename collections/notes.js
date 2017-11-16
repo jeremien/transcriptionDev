@@ -19,20 +19,47 @@ Note = class Note extends Model {
 	constructor(doc){
 		super()
 		_.extend(this, doc);
-		if(!doc.hasOwnProperty('note_ids')){
-			this.note_ids = []
+		if(!doc.hasOwnProperty('parent_id')){
+			this.parent_id = null
 		}
 	}
 
 	notes(){
-		if(this.note_ids != undefined && this.note_ids.constructor == Array){
-			return Note.find({_id : {$in : this.note_ids}})
-		} else {
-			throw new Meteor.Error('Warnning', 'note_ids is not an Array')
-		}
+    return Note.find({parent_id: this._id})
 	}
 
-	add(node_id){
-		this.note_ids.push(node_id)
+	add(note){
+    note.parent_id = this._id
+    note.save()
 	}
+
+  render(){
+    if(this.type == "image"){
+      return Template["note_image"]
+    }
+    if(this.type == "text"){
+      return Template["note_text"]
+    }
+
+    return Template["note_default"]
+
+  }
+
+}
+
+
+if(Meteor.isClient){
+  Template.add_note.events({
+    "click button": function(event,t){
+      event.preventDefault();
+      console.log(event.target.form)
+      var titre = event.target.form.titre.value; 
+      var parent_id = event.target.form.parent_id.value; 
+      if(parent_id == "") parent_id = null
+      event.target.form.reset()
+      var n = new Note({titre:titre, parent_id:parent_id})
+      n.save()
+    }
+  })
+
 }

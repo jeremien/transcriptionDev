@@ -15,6 +15,10 @@ Model = class Model {
 		var klass = this.prototype.constructor.name.toString() + "s"
 			return Collections[klass].find(selector, options)
 	}
+	static fetch(selector={}, options={}){
+		var klass = this.prototype.constructor.name.toString() + "s"
+			return Collections[klass].find(selector, options).fetch()
+	}
 
 
 	static findOne(selector={}, options={}){
@@ -34,19 +38,11 @@ Model = class Model {
 		}
 	}
 
-	save(){
-		var klass = this.constructor.name.toString() + "s"
-		if(this.hasOwnProperty('_id')){
-			// Update
-			console.log("update...")
-			var self = this
-			delete self._id
-			return Collections[klass].update(this._id, {$set: self})
-		} else {
-			// Insert
-			console.log("insert...")
-			return Collections[klass].insert(this)
 
-		}
-	}
+  save(){
+		var klass = this.constructor.name.toString() + "s";
+    return Collections[klass].upsert(this._id, {$set: this})
+
+    
+  }
 }

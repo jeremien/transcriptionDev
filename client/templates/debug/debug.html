@@ -1,0 +1,63 @@
+<template name="debug">
+  <div id="debug">
+  <h1>DEBUG</h1>
+  {{> add_note}}
+  <ol>
+    {{#each notes}}
+    <li>{{> render}}</li>
+    {{/each}}
+  </ol>
+  </div>
+</template>
+
+
+
+<template name="add_note">
+<div>
+  <form name="form_{{_id}}">
+  <input name="titre">
+  <input type="text" name="parent_id" value={{parent_id}}>
+  <button>+</button>
+  </form>
+</div>
+</template>
+
+
+
+
+<template name="note_default">
+<h1>{{titre}}</h1>
+<h6>Default render</h6>
+  {{> my_notes}}
+</template>
+
+
+
+
+<template name="note_image">
+<h1>{{titre}}</h1>
+<h6>Image render</h6>
+  {{> my_notes}}
+</template>
+
+
+
+
+
+<template name="note_text">
+<h1>{{titre}}</h1>
+<h6>Text render</h6>
+  {{> my_notes}}
+</template>
+
+
+<template name="my_notes">
+  <div class="my_notes">
+    <ol>
+    {{#each notes}}
+    <li>{{> render}}</li>
+    {{/each}}
+    <li>{{> add_note parent_id=_id}}</li>
+    </ol>
+  </div>
+</template>
