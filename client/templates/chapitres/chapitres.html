@@ -1,0 +1,40 @@
+<template name="chapitres">
+	<h1>Chapitres</h1>
+	Titre du chapitre : <input type="text" name="titre">
+
+	<button class="add_new_chapitre">Ajouter</button>
+	{{> chapitre_list}}
+</template>
+
+
+<template name="chapitre_list">
+	<ol>
+		{{#each chapitres}}
+			<li>{{> chapitre}}</li>
+		{{/each}}
+	</ol>
+</template>
+
+
+<template name="chapitre">
+	<div>
+		{{titre}}
+		<ul>
+			{{#each notes}}
+				<li>{{> note}}</li>
+			{{/each}}
+		</ul>
+	</div>
+</template>
+
+
+<template name="note">
+	<div>
+		{{titre}}
+		<ul>
+			{{#each notes}}
+				<li>{{> note}}</li>
+			{{/each}}
+		</ul>
+	</div>
+</template>
