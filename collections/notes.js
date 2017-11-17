@@ -56,7 +56,7 @@ if(Meteor.isClient){
       var titre = event.target.form.titre.value; 
       var parent_id = event.target.form.parent_id.value; 
       if(parent_id == "") parent_id = null
-      event.target.form.reset()
+      event.target.form.titre.value = ""; 
       var n = new Note({titre:titre, parent_id:parent_id})
       n.save()
     }
