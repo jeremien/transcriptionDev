@@ -16,10 +16,11 @@ Template.uploadImages.helpers({
 Template.uploadImages.events({
 
   'click #validerImage': function (e, template) {
-
+    e.preventDefault();
     var file = template.find('#fileInput').files[0];
     var text = template.find('.textImage').value;
-
+    var parent_id = event.target.form.parent_id.value; 
+    var type = "image";
     console.log(file);
     console.log(text);
 
@@ -51,7 +52,11 @@ Template.uploadImages.events({
               "meta.text":text
             }
           });
-        window.alert('File "' + fileObj.name + '" successfully uploaded');
+        //window.alert('File "' + fileObj.name + '" successfully uploaded');
+        n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id })
+        n.save()
+        $(".action").hide();
+        
       }
 
       template.currentUpload.set(false);

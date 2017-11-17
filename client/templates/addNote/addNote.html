@@ -2,18 +2,35 @@
     Add note system
 -->
 <template name="addNote">
-    <div id="addNote">
-        <div class="toolBar"></div>
-        {{> addTexte}}
-
-    </div>
+        <div class="toolBar">
+          <ul>
+            <li class="event_showElement" data-menu="text_{{_id}}">+T</li>
+            <li class="event_showElement" data-menu="image_{{_id}}">+I</li>
+            <li>...</li>
+          </ul>
+        {{> addTexte _id=_id parent_id=parent_id}}
+        {{> addImage _id=_id parent_id=parent_id}}
+        </div>
 </template>
 
 
 <template name="addTexte">
-    <textarea class="textInput" rows="4" cols="50">textArea</textarea>
+<div id="text_{{_id}}" class="action addTexte">
+    <form name="form_{{_id}}">
+      <textarea class="textInput" rows="5" cols="70" name="content" placeHolder="Enter your text"></textarea>
+      {{#if parent_id}}
+      <input type="text" name="parent_id" value={{parent_id}}>
+      {{else}}
+      <input type="text" name="parent_id" value={{selectedChapitre._id}}>
+      {{/if}}
+      <input type="hidden" name="type" value="text">
+      <button class="addTexteNoteButton">Ajouter</button>
+    </form>
+  </div>
 </template>
 
 <template name="addImage">
-
+  <div id="image_{{_id}}" class="action addImage">
+    {{> uploadImages}}
+  </div>
 </template>

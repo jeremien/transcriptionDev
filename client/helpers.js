@@ -11,3 +11,9 @@ Template.registerHelper(
         return r;
     }
 );
+
+Template.registerHelper(
+  "selectedChapitre", ()=> {
+    return Chapitre.findOne({_id:selectedChapitre.get()});
+  }    
+)

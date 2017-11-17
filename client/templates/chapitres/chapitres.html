@@ -8,33 +8,18 @@
 
 
 <template name="chapitre_list">
+  {{> addNote _id=selectedChapitre}}
 	<ol>
 		{{#each chapitres}}
 			<li>{{> chapitre}}</li>
 		{{/each}}
 	</ol>
+
+  <div class="flux">
+    <h1>Le flux</h1>
+  </div>
+
+
 </template>
 
 
-<template name="chapitre">
-	<div>
-		{{titre}}
-		<ul>
-			{{#each notes}}
-				<li>{{> note}}</li>
-			{{/each}}
-		</ul>
-	</div>
-</template>
-
-
-<template name="note">
-	<div>
-		{{titre}}
-		<ul>
-			{{#each notes}}
-				<li>{{> note}}</li>
-			{{/each}}
-		</ul>
-	</div>
-</template>

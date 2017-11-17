@@ -10,7 +10,7 @@ Template.chapitresBar.helpers({
 	}
 })
 
-selectedChapitre = new ReactiveVar();
+selectedChapitre = new ReactiveVar(null);
 
 Template.chapitresBar.events({
 	"click .chapDiv": function(e, t){

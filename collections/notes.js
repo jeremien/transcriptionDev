@@ -33,9 +33,15 @@ Note = class Note extends Model {
     note.save()
 	}
 
+  url(){
+    console.log(this)
+    var image = Images.findOne(this.image_id)
+    if(image) return image.link();
+  }
+
   render(){
     if(this.type == "image"){
-      return Template["note_image"]
+      return Template["blocImage"]
     }
     if(this.type == "text"){
       return Template["note_text"]
@@ -48,18 +54,3 @@ Note = class Note extends Model {
 }
 
 
-if(Meteor.isClient){
-  Template.add_note.events({
-    "click button": function(event,t){
-      event.preventDefault();
-      console.log(event.target.form)
-      var titre = event.target.form.titre.value; 
-      var parent_id = event.target.form.parent_id.value; 
-      if(parent_id == "") parent_id = null
-      event.target.form.titre.value = ""; 
-      var n = new Note({titre:titre, parent_id:parent_id})
-      n.save()
-    }
-  })
-
-}

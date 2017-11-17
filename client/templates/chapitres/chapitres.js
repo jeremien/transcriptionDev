@@ -4,8 +4,3 @@ Template.chapitre_list.helpers({
 	}
 })
 
-Template.note.helpers({
-	notes : function(){
-		return []//Note.find()
-	}
-})
