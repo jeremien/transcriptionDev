@@ -1,12 +1,18 @@
 Collections = {}
 
-
-
-
 Model = class Model {
 	constructor(){
 		console.log("Bonjour depuis la classe mère...")
 	}
+
+  toJsonValue(){
+    var notes = this.notes().fetch()
+  }
+
+
+
+
+
 	static insert(obj){
 		var klass = this.prototype.constructor.name.toString() + "s"
 			return Collections[klass].insert(obj)
