@@ -1,12 +1,3 @@
-Template.addTexte.onRendered(function(){
-    $(document).ready(function() {
-        
-
-
-    });
-});
-
-
 Template.addNote.events({
   "click .addTexteNoteButton": function(event,t){
     event.preventDefault();

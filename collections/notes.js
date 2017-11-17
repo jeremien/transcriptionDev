@@ -34,7 +34,6 @@ Note = class Note extends Model {
 	}
 
   url(){
-    console.log(this)
     var image = Images.findOne(this.image_id)
     if(image) return image.link();
   }
@@ -44,7 +43,7 @@ Note = class Note extends Model {
       return Template["blocImage"]
     }
     if(this.type == "text"){
-      return Template["note_text"]
+      return Template["blockTexte"]
     }
 
     return Template["note_default"]

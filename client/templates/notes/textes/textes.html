@@ -1,4 +1,56 @@
-<template name="ajoutTexte">
+<template name="addTexte">
+<div id="text_{{_id}}" class="action addTexte">
+    <form name="form_{{_id}}">
+      <textarea class="textInput" rows="5" cols="70" name="content" placeHolder="Enter your text"></textarea>
+      {{#if parent_id}}
+      <input type="hidden" name="parent_id" value={{parent_id}}>
+      {{else}}
+      <input type="hidden" name="parent_id" value={{selectedChapitre._id}}>
+      {{/if}}
+      <input type="hidden" name="type" value="text">
+      <button class="addTexteNoteButton">Ajouter</button>
+    </form>
+  </div>
+</template>
+
+
+
+
+
+<template name="blockTexte">
+  <div class="note texte">
+    {{#markdown}}{{content}}{{/markdown}}
+  </div>
+  {{> my_notes}}
+  {{> addNote _id=_id parent_id=_id}}
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template name="ajoutTexteOLD">
 
   <select class="select-noms">
     <option selected>noms</option>

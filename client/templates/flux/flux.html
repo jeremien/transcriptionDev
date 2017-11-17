@@ -15,32 +15,8 @@
   </div>
 </template>
 
-<template name="note_default">
-<h1>{{titre}}</h1>
-<h6>Default render</h6>
-  {{> my_notes}}
-</template>
 
 
-
-
-<template name="note_image">
-<h1>{{titre}}</h1>
-<h6>Image render</h6>
-  {{> my_notes}}
-</template>
-
-
-
-
-
-<template name="note_text">
-  <div class="note texte">
-    {{#markdown}}{{content}}{{/markdown}}
-  </div>
-  {{> my_notes}}
-  {{> addNote _id=_id parent_id=_id}}
-</template>
 
 
 <template name="my_notes">
@@ -53,7 +29,7 @@
   </div>
 </template>
 
-<template name="blocText">
+<template name="blocTextOLD">
 <li>
   <p>Transcription :
   </p>
@@ -74,18 +50,7 @@
 <hr>
 </template>
 
-<template name="blocImage">
-<li>
-  <p>Image : </p>
-  <p class="date">timeline > {{uToHours (date)}}:{{uToMinutes (date)}}</p>
-  <img class="imageBloc" src="{{url}}">
-  <p>texte >
-  {{#markdown}} {{text}} {{/markdown}}</p>
-</li>
-  {{> my_notes}}
-  {{> addNote _id=_id parent_id=_id}}
-<hr>
-</template>
+
 
 <template name="blocDessin">
 <li>

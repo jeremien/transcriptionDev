@@ -2,7 +2,7 @@ Collections = {}
 
 Model = class Model {
 	constructor(){
-		console.log("Bonjour depuis la classe mère...")
+		//console.log("Bonjour depuis la classe mère...")
 	}
 
   toJsonValue(){

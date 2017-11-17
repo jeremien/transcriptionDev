@@ -14,11 +14,32 @@
       <input id="fileInput" type="file" />
       <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
         {{#if parent_id}}
-        <input type="text" name="parent_id" value={{parent_id}}>
+        <input type="hidden" name="parent_id" value={{parent_id}}>
         {{else}}
-        <input type="text" name="parent_id" value={{selectedChapitre._id}}>
+        <input type="hidden" name="parent_id" value={{selectedChapitre._id}}>
         {{/if}}
       <input type="submit" id="validerImage" value="envoyer l'image">
   </form>    
   {{/with}}
+</template>
+
+
+<template name="addImage">
+  <div id="image_{{_id}}" class="action addImage">
+    {{> uploadImages}}
+  </div>
+</template>
+
+
+<template name="blocImage">
+<li>
+  <p>Image : </p>
+  <p class="date">timeline > {{uToHours (date)}}:{{uToMinutes (date)}}</p>
+  <img class="imageBloc" src="{{url}}">
+  <p>texte >
+  {{#markdown}} {{text}} {{/markdown}}</p>
+</li>
+  {{> my_notes}}
+  {{> addNote _id=_id parent_id=_id}}
+<hr>
 </template>

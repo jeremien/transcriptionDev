@@ -1,0 +1,22 @@
+<!--
+    Add note system
+-->
+<template name="addNote">
+        <div class="toolBar">
+          <ul>
+            <li class="event_showElement" data-menu="text_{{_id}}">+T</li>
+            <li class="event_showElement" data-menu="image_{{_id}}">+I</li>
+            <li>...</li>
+          </ul>
+        {{> addTexte _id=_id parent_id=parent_id}}
+        {{> addImage _id=_id parent_id=parent_id}}
+        </div>
+</template>
+
+
+
+
+
+<template name="note_default">
+    <h1>NO RENDERE FOR ME...</h1>
+</template>

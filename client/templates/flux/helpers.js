@@ -1,3 +1,4 @@
+/*
 Template.flux.helpers({
 
   transcriptions: function(){
@@ -69,3 +70,4 @@ Template.flux.helpers({
     }
   }
 });
+*/

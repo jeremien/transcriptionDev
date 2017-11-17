@@ -1,3 +1,9 @@
+
+
+
+
+/*
+
 Template.ajoutTexte.events({
   // envoi des transcriptions
   "click #validerTranscription": function(event, template) {
@@ -38,7 +44,7 @@ Template.ajoutTexte.events({
   }
 });
 
-
+*/
 /*Template.ajoutTexte.events({
 
   // envoi des transcriptions

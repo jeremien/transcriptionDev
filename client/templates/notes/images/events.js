@@ -1,7 +1,3 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-import Images from '/collections/images.js';
-import '/client/templates/uploadImages/uploadImages.html';
 
 Template.uploadImages.onCreated(function () {
   this.currentUpload = new ReactiveVar(false);
@@ -21,8 +17,6 @@ Template.uploadImages.events({
     var text = template.find('.textImage').value;
     var parent_id = event.target.form.parent_id.value; 
     var type = "image";
-    console.log(file);
-    console.log(text);
 
     if(file){
 
@@ -40,7 +34,6 @@ Template.uploadImages.events({
       if (error) {
         window.alert('Error during upload: ' + error.reason);
       } else {
-        console.log("id"+fileObj._id);
         var utc = Date.now();
         Images.update(
           {
