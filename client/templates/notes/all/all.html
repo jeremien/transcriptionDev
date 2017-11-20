@@ -5,9 +5,16 @@
 
       {{> formMeta }}
 
-      {{> formImage }}
+      {{! formImage }}
 
-      {{> formTexte }}
+      {{! formTexte }}
+
+
+      {{> addTexte}}
+      {{> addImage}}
+
+
+
 
     </div>
   </div>
@@ -16,7 +23,7 @@
 
 <template name="formMeta">
   <div class="item">
-    <form>
+    <form id="form_meta_{{_id}}">
       <p>metadonnées</p>
       <div class="form-group">
         <label for="">intervenants</label>
@@ -48,7 +55,7 @@
       <span id="progress">{{progress.get}}%</span>
     {{else}}
 
-      <form name="form_{{_id}}">
+      <form name="form_image_{{_id}}">
         <label>charger l'image</label>
         <input type="file" id="fileInput" class="form-control-file">
         {{#if parent_id}}
@@ -70,7 +77,7 @@
 <template name="formTexte">
   <div class="item">
     <p>texte</p>
-    <form name="form_{{_id}}">
+    <form name="form_text_{{_id}}">
       <label for="">ajouter votre texte</label>
       <textarea class="form-control" name="content" rows="2"></textarea>
       <br>

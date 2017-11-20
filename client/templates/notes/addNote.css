@@ -40,10 +40,10 @@
   margin-left:10px; 
 }
 .addTexte {
-  display: none;
+  display: block;
 }
 .addImage {
-  display: none;
+  display: block;
 }
 
 .addAll{
