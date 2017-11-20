@@ -46,6 +46,10 @@
   display: none;
 }
 
+.addAll{
+  display:none;
+}
+
 
 .note {
   min-height: 20px;
