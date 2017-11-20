@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  //background-color: red;
+
+  .item {
+    flex: 1;
+    background-color: rgb(200,200,200);
+    padding: 10px;
+
+  }
+
+}
