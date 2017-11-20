@@ -13,6 +13,9 @@ Chapitre = class Chapitre extends Model {
 	notes(){
     return Note.find({parent_id:this._id})
 	}
+  hasNotes(){
+    return this.notes().fetch().length >0;
+  }
 
 	add(note){
     note.parent_id = this._id;

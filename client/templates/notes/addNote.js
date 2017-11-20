@@ -1,12 +1,14 @@
 Template.addNote.events({
   "click .addTexteNoteButton": function(event,t){
     event.preventDefault();
-    var content = event.target.form.content.value; 
-    var parent_id = event.target.form.parent_id.value; 
-    var type = event.target.form.type.value; 
-    if(parent_id == "") parent_id = null
+
+    var doc = form2js("form_" + this._id);
+
+    // TODO : Data validation in Model !
+    if(doc.parent_id == "") parent_id = null
     event.target.form.content.value = ""; 
-    var n = new Note({content:content, parent_id:parent_id, type:type})
+    var n = new Note(doc)
+    // TODO : Data validation in Model !
     n.save()
     $(".action").hide();
   },

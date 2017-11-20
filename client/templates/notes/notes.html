@@ -4,13 +4,11 @@
 <template name="addNote">
         <div class="toolBar">
           <ul>
-            <li class="event_showElement" data-menu="text_{{_id}}">+T</li>
-            <li class="event_showElement" data-menu="image_{{_id}}">+I</li>
-            <li class="event_showElement" data-menu="all_{{_id}}">+A</li>
+            <!--<li class="event_showElement" data-menu="text_{{_id}}">+T</li>-->
+            <!--<li class="event_showElement" data-menu="image_{{_id}}">+I</li>-->
+            <li class="event_showElement" data-menu="all_{{_id}}">+</li>
           </ul>
-        {{> addTexte _id=_id parent_id=parent_id}}
-        {{> addImage _id=_id parent_id=parent_id}}
-        {{> addAll _id=_id parent_id=parent_id}}
+        {{> addAll}}
         </div>
 </template>
 

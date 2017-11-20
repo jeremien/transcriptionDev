@@ -47,6 +47,11 @@ Model = class Model {
 
   save(){
 		var klass = this.constructor.name.toString() + "s";
+    if(this.hasOwnProperty('createdAt')){
+      this.updatedAt = new Date()
+    } else {
+      this.createdAt = new Date();
+    }
     return Collections[klass].upsert(this._id, {$set: this})
 
     

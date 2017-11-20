@@ -3,11 +3,16 @@
     {{#if selectedChapitre}}
       <h1>[{{selectedChapitre.titre}}]</h1>
       {{> addNote _id=selectedChapitre._id parent_id=selectedChapitre._id}}
+      {{#if selectedChapitre.hasNotes}}
       <div class="box">
       {{#each selectedChapitre.notes}}
+        <hr>
         {{> render}}
       {{/each}}
       </div>
+      {{else}}
+      <h1>Ajoutez des notes...</h1> 
+      {{/if}}
     {{else}}
       <h1>Sélectionnez un chapitre...</h1>
     {{/if}}
@@ -20,6 +25,7 @@
 
 
 <template name="my_notes">
+  {{#if hasNotes}}
   <div class="box">
     <ul>
     {{#each notes}}
@@ -27,6 +33,7 @@
     {{/each}}
     </ul>
   </div>
+  {{/if}}
 </template>
 
 <template name="blocTextOLD">
