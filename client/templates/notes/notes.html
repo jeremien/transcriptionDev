@@ -7,6 +7,7 @@
             <!--<li class="event_showElement" data-menu="text_{{_id}}">+T</li>-->
             <!--<li class="event_showElement" data-menu="image_{{_id}}">+I</li>-->
             <li class="event_showElement" data-menu="all_{{_id}}">+</li>
+            {{#if isAdmin}}<li style="float:right;" class="event_removeNote">[X]</li>{{/if}}
           </ul>
         {{> addAll}}
         </div>

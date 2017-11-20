@@ -22,7 +22,13 @@ Template.addNote.events({
       $(".action").hide();
       $(element).show();
     }
-  }
+  }, 
+
+    "click .event_removeNote" : function(e,t){
+      console.log(this);
+      if(this.chapitre) Chapitre.findOne({_id:this._id}).remove()
+      else Note.findOne({_id:this._id}).remove()
+    }
 
 
 })
