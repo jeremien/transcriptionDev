@@ -1,6 +1,6 @@
 <template name="addTexte">
 <div id="text_{{_id}}" class="action addTexte">
-    <form name="form_{{_id}}">
+    <form id="form_{{_id}}">
       <textarea class="textInput" rows="5" cols="70" name="content" placeHolder="Enter your text"></textarea>
       {{#if parent_id}}
       <input type="hidden" name="parent_id" value={{parent_id}}>
