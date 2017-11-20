@@ -1,21 +1,9 @@
 <template name="addAll">
   <div id="all_{{_id}}" class="action addAll">
-
     <div class="container">
-
-      {{> formMeta }}
-
-      {{! formImage }}
-
-      {{! formTexte }}
-
-
+      {{! formMeta }}
       {{> addTexte}}
       {{> addImage}}
-
-
-
-
     </div>
   </div>
 
@@ -43,51 +31,3 @@
 
 </template>
 
-<template name="formImage">
-
-  <div class="item">
-
-    <p>image</p>
-
-    {{#with currentUpload}}
-      Uploading
-      <b>{{file.name}}</b>:
-      <span id="progress">{{progress.get}}%</span>
-    {{else}}
-
-      <form name="form_image_{{_id}}">
-        <label>charger l'image</label>
-        <input type="file" id="fileInput" class="form-control-file">
-        {{#if parent_id}}
-          <input type="hidden" name="parent_id" value={{parent_id}}>
-        {{else}}
-          <input type="hidden" name="parent_id" value={{selectedChapitre._id}}>
-        {{/if}}
-        <br>
-        <label>légende de l'image</label>
-        <textarea class="form-control" id="textImage" rows="2"></textarea>
-        <br>
-        <button type="submit" id="validerImage" class="btn btn-primary">envoie</button>
-      </form>
-    {{/with}}
-  </div>
-
-</template>
-
-<template name="formTexte">
-  <div class="item">
-    <p>texte</p>
-    <form name="form_text_{{_id}}">
-      <label for="">ajouter votre texte</label>
-      <textarea class="form-control" name="content" rows="2"></textarea>
-      <br>
-      {{#if parent_id}}
-      <input type="hidden" name="parent_id" value={{parent_id}}>
-      {{else}}
-      <input type="hidden" name="parent_id" value={{selectedChapitre._id}}>
-      {{/if}}
-      <input type="hidden" name="type" value="text">
-      <button type="submit" id="addTexteNoteButton" class="btn btn-primary">envoie</button>
-    </form>
-  </div>
-</template>
