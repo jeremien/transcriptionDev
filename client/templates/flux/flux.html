@@ -2,7 +2,7 @@
   <div id="flux">
     {{#if selectedChapitre}}
       <h1>[{{selectedChapitre.titre}}]</h1>
-      {{> addNote _id=selectedChapitre._id parent_id=selectedChapitre._id}}
+      {{> addNote chapitre=true _id=selectedChapitre._id parent_id=selectedChapitre._id}}
       {{#if selectedChapitre.hasNotes}}
       <div class="box">
       {{#each selectedChapitre.notes}}
