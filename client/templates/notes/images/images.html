@@ -28,14 +28,9 @@
 
 
 <template name="blocImage">
-<li>
-  <p>Image : </p>
-  <p class="date">timeline > {{uToHours (date)}}:{{uToMinutes (date)}}</p>
+  {{> date date=createdAt}}
   <img class="imageBloc" src="{{url}}">
-  <p>texte >
-  {{#markdown}} {{text}} {{/markdown}}</p>
-</li>
+  <p>{{#markdown}} {{legend}} {{/markdown}}</p>
   {{> my_notes}}
   {{> addNote _id=_id parent_id=_id}}
-<hr>
 </template>

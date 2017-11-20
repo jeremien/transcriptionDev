@@ -14,14 +14,13 @@
 
 
 <template name="blockTexte">
+  {{> date date=createdAt}}
   <div class="note texte">
     {{#markdown}}{{content}}{{/markdown}}
   </div>
   {{> my_notes}}
   {{> addNote _id=_id parent_id=_id}}
 </template>
-
-
 
 
 
