@@ -15,7 +15,7 @@ Template.uploadImages.events({
     e.preventDefault();
     var file = template.find('#fileInput').files[0];
     var text = template.find('.textImage').value;
-    var parent_id = event.target.form.parent_id.value; 
+    var parent_id = e.target.form.parent_id.value; 
     var type = "image";
 
     if(file){

@@ -1,23 +1,25 @@
 <template name="flux">
-  <div id="flux">
-    {{#if selectedChapitre}}
+<div id="flux">
+  {{#if selectedChapitre}}
+    {{#with selectedChapitre}}
       <h1>[{{selectedChapitre.titre}}]</h1>
-      {{> addNote chapitre=true _id=selectedChapitre._id parent_id=selectedChapitre._id}}
-      {{#if selectedChapitre.hasNotes}}
-      <div class="box">
-      {{#each selectedChapitre.notes}}
-        <hr>
-        {{> render}}
-      {{/each}}
-      </div>
+      {{> addNote}}
+      {{#if hasNotes}}
+        <div class="box">
+          {{#each notes}}
+          <hr>
+          {{> render}}
+          {{/each}}
+        </div>
       {{else}}
-      <h1>Ajoutez des notes...</h1> 
+        <h1>Ajoutez des notes...</h1> 
       {{/if}}
-    {{else}}
-      <h1>Sélectionnez un chapitre...</h1>
-    {{/if}}
+    {{/with}}
+  {{else}}
+    <h1>Sélectionnez un chapitre...</h1>
+  {{/if}}
 
-  </div>
+</div>
 </template>
 
 
@@ -27,6 +29,8 @@
 <template name="my_notes">
   {{#if hasNotes}}
   <div class="box">
+    {{#if isAdmin}}
+    {{/if}}
     <ul>
     {{#each notes}}
     <li>{{> render}}</li>

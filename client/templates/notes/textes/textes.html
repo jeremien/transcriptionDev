@@ -1,10 +1,10 @@
 <template name="addTexte">
 <div id="text_{{_id}}" class="item">
     <form id="form_{{_id}}">
-      <textarea class="textInput" rows="5" cols="40" name="content" placeHolder="Enter your text"></textarea>
-      <input type="hidden" name="parent_id" value={{parent_id}}>
+      <textarea class="textInput" rows="5" cols="40" name="content" placeHolder="Enter your text">{{content}}</textarea>
+      <input type="hidden" name="parent_id" value={{_id}}>
       <input type="hidden" name="type" value="text">
-      <button class="addTexteNoteButton">Ajouter</button>
+      <button class="addTexteNoteButton">Valider</button>
     </form>
   </div>
 </template>
@@ -19,7 +19,7 @@
     {{#markdown}}{{content}}{{/markdown}}
   </div>
   {{> my_notes}}
-  {{> addNote _id=_id parent_id=_id}}
+  {{> addNote }}
 </template>
 
 

@@ -4,19 +4,10 @@
 <template name="addNote">
         <div class="toolBar">
           <ul>
-            <!--<li class="event_showElement" data-menu="text_{{_id}}">+T</li>-->
-            <!--<li class="event_showElement" data-menu="image_{{_id}}">+I</li>-->
-            <li class="event_showElement" data-menu="all_{{_id}}">+</li>
-            {{#if isAdmin}}<li style="float:right;" class="event_removeNote">[X]</li>{{/if}}
+            <li class="event_showFormToAddNewNote" data-menu="all_{{_id}}">+</li>
+            <li style="float:right" class="event_removeNote">[X]</li>
+            <li style="float:right" data-menu="all_{{_id}}" data-edit="true" class="event_showFormToEditNote">[E]</li>
           </ul>
         {{> addAll}}
         </div>
-</template>
-
-
-
-
-
-<template name="note_default">
-    <h1>NO RENDERE FOR ME...</h1>
 </template>

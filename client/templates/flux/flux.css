@@ -3,3 +3,18 @@
   margin-top:20px;
   padding:10px;
 }
+
+.box > p {
+  background-color: grey;
+  color:white;
+  height:40px;
+  padding:0;
+  margin:0;
+}
+
+.box > p > span {
+  float:right;
+  height:40px;
+  line-height:40px;
+  font-size:40px;
+}

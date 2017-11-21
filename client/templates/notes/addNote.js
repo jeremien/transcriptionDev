@@ -1,3 +1,5 @@
+
+
 Template.addNote.events({
   "click .addTexteNoteButton": function(event,t){
     event.preventDefault();
@@ -13,20 +15,34 @@ Template.addNote.events({
     $(".action").hide();
   },
 
-  "click .event_showElement" : function(event, template){
+  "click .event_showFormToAddNewNote" : function(event, template){
     event.preventDefault();
+
     var element =  "#" + event.target.getAttribute('data-menu');
     if($(element).is(":visible")){
       $(element).hide();
     } else {
-      $(".action").hide();
+      //$(".action").hide();
+      $(element).show();
+      $("#form_"+this._id)[0].content.value="";
+    }
+  }, 
+  "click .event_showFormToEditNote" : function(event, template){
+    event.preventDefault();
+
+    var element =  "#" + event.target.getAttribute('data-menu');
+    if($(element).is(":visible")){
+      $(element).hide();
+    } else {
+      //$(".action").hide();
       $(element).show();
     }
   }, 
 
     "click .event_removeNote" : function(e,t){
       console.log(this);
-      if(this.chapitre) Chapitre.findOne({_id:this._id}).remove()
+      // TODO : Use EJSON to do better thing here...
+      if(!this.parent_id) Chapitre.findOne({_id:this._id}).remove()
       else Note.findOne({_id:this._id}).remove()
     }
 

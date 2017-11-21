@@ -1,3 +1,4 @@
+import { EJSON } from 'meteor/ejson'
 Collections["Notes"] = new Mongo.Collection('notes',{
 	transform: (doc) => new Note(doc)
 });
@@ -17,7 +18,7 @@ note_ids: []
 
 Note = class Note extends Model {
 	constructor(doc){
-		super()
+    super();
 		_.extend(this, doc);
 		if(!doc.hasOwnProperty('parent_id')){
 			this.parent_id = null
@@ -53,7 +54,19 @@ Note = class Note extends Model {
     return Template["note_default"]
 
   }
+  // EJSON
+  //
+  // TODO : Move this in _Model.js
+  // toJSONValue(){
+  //   self = this;
+  //   return JSON.parse(JSON.stringify(self))
+  // }
+  // typeName(){
+  //   return "Note"
+  // }
 
 }
 
-
+// EJSON.addType('Note', function fromJSONValue(json){
+//   return new Note(json);
+// });
