@@ -5,12 +5,8 @@
       <h1>[{{selectedChapitre.titre}}]</h1>
       {{> noteToolBar}}
       {{#if hasNotes}}
-        <div class="box">
-          {{#each notes}}
-          <hr>
-          {{> render}}
-          {{/each}}
-        </div>
+          {{> my_notes}}
+          <hr />
       {{else}}
         <h1>Ajoutez des notes...</h1> 
       {{/if}}
@@ -28,14 +24,11 @@
 
 <template name="my_notes">
   {{#if hasNotes}}
-  <div class="box">
-    {{#if isAdmin}}
-    {{/if}}
     <ul>
     {{#each notes}}
+    <li> {{> noteToolBar }}</li>
     <li>{{> render}}</li>
     {{/each}}
     </ul>
-  </div>
   {{/if}}
 </template>
