@@ -1,7 +1,21 @@
+<!--
+    Add note system
+-->
+<template name="noteToolBar">
+        <div class="toolBar">
+          <ul>
+            <li class="event_showFormToAddNewNote" data-menu="all_{{_id}}">+</li>
+            <li style="float:right" class="event_removeNote">[X]</li>
+            <li style="float:right" data-menu="all_{{_id}}" data-edit="true" class="event_showFormToEditNote">[E]</li>
+          </ul>
+        {{> addAll}}
+        </div>
+</template>
+
 <template name="addAll">
   <div id="all_{{_id}}" class="action addAll">
     <div class="container">
-      {{! formMeta }}
+      {{> formMeta }}
       {{> addTexte}}
       {{> addImage}}
     </div>
@@ -19,11 +33,11 @@
       </div>
       <div class="form-group">
         <label for="">sujets</label>
-        <input type="text" class="form-control" placeholder="ajouter les sujets discutés">
+        <input name="subjects" type="text" class="form-control" placeholder="ajouter les sujets discutés">
       </div>
       <div class="form-group">
         <label for="">mots-clés</label>
-        <input type="text" class="form-control" placeholder="ajouter des mots-clés">
+        <input name="keywords" type="text" class="form-control" placeholder="ajouter des mots-clés">
       </div>
 
     </form>

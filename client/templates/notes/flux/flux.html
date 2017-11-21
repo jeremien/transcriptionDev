@@ -3,7 +3,7 @@
   {{#if selectedChapitre}}
     {{#with selectedChapitre}}
       <h1>[{{selectedChapitre.titre}}]</h1>
-      {{> addNote}}
+      {{> noteToolBar}}
       {{#if hasNotes}}
         <div class="box">
           {{#each notes}}
@@ -38,38 +38,4 @@
     </ul>
   </div>
   {{/if}}
-</template>
-
-<template name="blocTextOLD">
-<li>
-  <p>Transcription :
-  </p>
-  <p class="date">timeline >
-    {{uToHours (date)}}:{{uToMinutes (date)}}</p>
-  <p class="text">texte >
-    {{#markdown}} {{text}} {{/markdown}}
-  </p>
-  <p class="text">nom >
-    {{nom}}</p>
-  <p class="text">sujet >
-    {{sujet}}</p>
-  <p class="text">pseudo >
-    {{pseudo}}</p>
-  <p class="text">tag >
-    {{tag}}</p>
-</li>
-<hr>
-</template>
-
-
-
-<template name="blocDessin">
-<li>
-  <p>Image :
-  </p>
-  <p class="date">timeline >
-    {{uToHours (date)}}:{{uToMinutes (date)}}</p>
-  <img class="imageBloc" src="{{url}}">
-</li>
-<hr>
 </template>
