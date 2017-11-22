@@ -14,7 +14,7 @@ Template.uploadImages.events({
   'click #validerImage': function (e, template) {
     e.preventDefault();
     var file = template.find('#fileInput').files[0];
-    var text = template.find('.textImage').value;
+    var legend = e.target.form.legend.value; 
     var parent_id = e.target.form.parent_id.value; 
     var type = "image";
 
@@ -34,19 +34,8 @@ Template.uploadImages.events({
       if (error) {
         window.alert('Error during upload: ' + error.reason);
       } else {
-        var utc = Date.now();
-        Images.update(
-          {
-            _id:fileObj._id
-          },
-          {
-            $set:{
-              "meta.date":utc,
-              "meta.text":text
-            }
-          });
         //window.alert('File "' + fileObj.name + '" successfully uploaded');
-        n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id })
+        n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend })
         n.save()
         $(".action").hide();
         

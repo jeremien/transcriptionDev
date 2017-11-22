@@ -3,6 +3,24 @@
     margin-top:20px;
     padding:10px;
 }
+.box {
+    //padding:10px;
+    //margin-bottom:20px;
+    //border:1px solid lightgrey;
+    //text-align: center;
+}
+
+
+.box:hover {
+    //border: 1px solid green;
+    //background-color:lightgrey;
+}
+
+.box>ul {
+    margin:0;
+    padding:0;
+    margin-left:10px;
+}
 
 .box > p {
     background-color: rgb(80, 80, 80);
