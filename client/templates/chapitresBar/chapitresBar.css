@@ -21,15 +21,27 @@
     border-width: 1px;
     border-style: solid;
 
+    height: 50px;
+
     cursor: pointer;
 }
 
+.chapDiv h1{
+    font-size: 20px;
+    line-height: 20px;
+    margin: 4px;
+}
+
+
 .chapDiv:hover{
-    background-color: rgba(0, 255, 0, 0.2);
+    transition: 0.2s;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(0, 255, 0);
 }
 
 .selectedChap{
-    background-color: rgba(0, 255,0,0.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
 }
 
 .chapDiv p{
@@ -37,4 +49,12 @@
     font-size: 0.9em;
     margin: 0px;
     padding: 0px;
+}
+
+#addChapitre{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: thin;
 }
