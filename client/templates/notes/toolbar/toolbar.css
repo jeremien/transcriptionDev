@@ -1,51 +1,55 @@
 .toolBar {
-  //background-color: orange;
-  border:1px solid grey;
-  width: 300px;
+    background-color:rgb(230,230,230);
+    border:1px solid rgb(0,0,0);
+    width: 300px;
+    padding: 0px;
+    margin:0px;
 }
 
 .toolBar > ul {
-  margin:0;
-  padding:0;
+    margin:0;
+    padding:0;
 }
-.toolBar > ul>li {
-  display:inline-block;
-  height:30px;
-  line-height:30px;
-  font-size:20px;
-  text-align:center;
-  margin-right:5px;
-  margin-left:5px;
-  width:30px;
+.toolBar > ul > li {
+    display:inline-block;
+    font-family: monospace;
+    font-size:13px;
+    text-align:center;
+    padding: 1px;
+    margin:0px;
+    margin-right:6px;
+    margin-left:6px;
+    width: 26px;
+    height: 20px;
+    //transform: translate(0px,-2px);
 }
 .toolBar > ul>li:hover {
-  background-color: black;
-  color:white;
-  cursor:pointer;
+    background-color: black;
+    color:white;
+    cursor:pointer;
 }
-
 .box {
-  padding:10px;
-  margin-bottom:20px;
-  border:1px solid lightgrey;
+    padding:10px;
+    margin-bottom:20px;
+    border:1px solid lightgrey;
 }
 
 
 .box:hover {
-  border: 1px solid green;
-  //background-color:lightgrey;
+    border: 1px solid green;
+    //background-color:lightgrey;
 }
 
 .box>ul {
-  margin:0;
-  padding:0;
-  margin-left:10px; 
+    margin:0;
+    padding:0;
+    margin-left:10px;
 }
 .addAll{
-  display:none;
+    display:none;
 }
 
 
 .note {
-  min-height: 20px;
+    min-height: 20px;
 }
