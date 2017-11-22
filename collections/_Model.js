@@ -1,5 +1,19 @@
 Collections = {}
 
+
+getNotes = function getNotes(note){
+  var currentNote = note.toJSON();
+  currentNote.children = [];
+  if(note.notes().count() > 0){
+    _.each(note.notes().fetch(), function(note){
+      currentNote.children.push(getNotes(note));
+    });
+  }
+  return currentNote;
+}
+
+
+
 Model = class Model {
 
 
@@ -8,6 +22,29 @@ Model = class Model {
 	// 	var klass = this.prototype.constructor.name.toString() + "s"
 	// 		return Collections[klass].insert(obj)
 	// }
+
+	static toJSON(){
+		var klass = this.prototype.constructor.name.toString() + "s";
+
+    var data = [];
+    var chapitres = Collections[klass].find().fetch();
+
+    _.each(chapitres, function(c){
+      data.push(getNotes(c));
+    });
+
+    return data;
+
+
+
+	}
+
+
+
+
+
+
+
 	static find(selector={}, options={}){
 		var klass = this.prototype.constructor.name.toString() + "s"
 			return Collections[klass].find(selector, options)

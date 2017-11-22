@@ -43,6 +43,18 @@ Note = class Note extends Model {
     if(image) return image.link();
   }
 
+
+  toJSON(){
+    var data = {type:this.type, createdAt: this.createdAt, updatedAt:this.updatedAt};
+    if(this.type == "image"){
+      data.url = this.url(); 
+    }
+    if(this.type == "text"){
+      data.content = this.content;
+    }
+    return data;
+  }
+
   render(){
     if(this.type == "image"){
       return Template["blocImage"]

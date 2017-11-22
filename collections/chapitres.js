@@ -21,6 +21,9 @@ Chapitre = class Chapitre extends Model {
     note.parent_id = this._id;
     note.save()
 	}
+  toJSON(){
+    return {titre:this.titre, createdAt: this.createdAt, updatedAt:this.updatedAt};
+  }
 }
 
 
