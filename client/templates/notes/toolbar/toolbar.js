@@ -78,19 +78,10 @@ Template.noteToolBar.events({
   },
   "click .event_showFormToEditNote": function(event, template) {
     event.preventDefault();
-    isNew.set(false);
-
-    var element = "#" + event.target.getAttribute('data-menu');
-    if ($(element).is(":visible")) {
-      $(element).hide();
-    } else {
-      //$(".action").hide();
-      $(element).show();
-    }
+    selectedNote.set(this._id);
   },
 
   "click .event_removeNote": function(e, t) {
-    console.log(this);
     // TODO : Use EJSON to do better thing here...
     if (!this.parent_id) Chapitre.findOne({
       _id: this._id

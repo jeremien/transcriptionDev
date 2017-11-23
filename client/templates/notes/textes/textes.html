@@ -4,11 +4,7 @@
       <textarea class="textInput" rows="5" cols="40" name="content" placeHolder="Enter your text"></textarea>
       <input type="hidden" name="parent_id" value={{_id}}>
       <input type="hidden" name="type" value="text">
-      {{#if isNew}}
-        <button class="addTexteNoteButton">Ajouter</button>
-      {{else}}
-        <button class="addTexteNoteButton">Mise à jour</button>
-      {{/if}}
+      <button class="addTexteNoteButton">Ajouter</button>
     </form>
   </div>
 </template>
@@ -17,9 +13,17 @@
 <template name="blockTexte">
   <div class="box">
   {{> date date=createdAt}}
-  <div class="note texte">
-    {{#markdown}}{{content}}{{/markdown}}
-  </div>
+  {{#if editing _id}}
+
+  <textarea id="new_value_for_{{_id}}" class="textInput" rows="5" cols="40" name="content" placeHolder="Enter your text">{{content}}</textarea>
+   <button class="event_updateNoteButton">Valider</button>
+   <a href="#" class="event_cancelEditNote">Annuler</a>
+
+  {{else}}
+    <div class="note texte">
+      {{#markdown}}{{content}}{{/markdown}}
+    </div>
+  {{/if}}
   {{> my_notes}}
   </div>
 </template>
