@@ -2,16 +2,16 @@
     Add note system
 -->
 <template name="noteToolBar">
-        <div class="toolBar">
+  <div class="toolBar">
 
-            {{#if isAdmin}}
-            <button class="event_showFormToAddNewNote" data-menu="all_{{_id}}">ajouter</button>
-            <button style="float:right" class="event_removeNote">supprimer</button>
-            <button style="float:right" data-menu="all_{{_id}}" data-edit="true" class="event_showFormToEditNote">éditer</button>
-            {{else}}
-            <button class="event_showFormToAddNewNote" data-menu="all_{{_id}}">ajouter</button>
-            {{/if}}
-          <!--
+    <button class="event_showFormToAddNewNote" data-menu="all_{{_id}}">ajouter</button>
+    {{#if isAdmin}}
+      {{#if isNote}}
+        <button style="float:right" class="event_removeNote">supprimer</button>
+        <button style="float:right" data-menu="all_{{_id}}" data-edit="true" class="event_showFormToEditNote">éditer</button>
+      {{/if}}
+    {{/if}}
+    <!--
           <ul>
             <li class="event_showFormToAddNewNote" data-menu="all_{{_id}}">+</li>
             <li style="float:right" class="event_removeNote">[X]</li>
@@ -19,8 +19,8 @@
           </ul>
           -->
 
-        {{> addAll}}
-        </div>
+    {{> addAll}}
+  </div>
 </template>
 
 <template name="addAll">

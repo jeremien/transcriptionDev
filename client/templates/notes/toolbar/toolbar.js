@@ -46,6 +46,11 @@ Template.formMeta.events = {
   }
 }
 
+Template.noteToolBar.helpers({
+  isNote: function(){
+    return this.parent_id!=null;
+  }
+});
 
 
 Template.noteToolBar.events({
