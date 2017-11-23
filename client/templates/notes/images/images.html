@@ -24,10 +24,16 @@
 
 
 <template name="blocImage">
-  <div class="box">
-    {{> date date=createdAt}}
-    <img class="imageBloc" src="{{url}}">
-    <legend>{{#markdown}} {{legend}} {{/markdown}}</legend>
-    {{> my_notes}}
-  </div>
+  {{#if editing _id}}
+     Editing image...
+     <button class="event_updateNoteButton">Valider</button>
+     <a href="#" class="event_cancelEditNote">Annuler</a>
+  {{else}}
+    <div class="box">
+      {{> date date=createdAt}}
+      <img class="imageBloc" src="{{url}}">
+      <legend>{{#markdown}} {{legend}} {{/markdown}}</legend>
+      {{> my_notes}}
+    </div>
+  {{/if}}
 </template>
