@@ -39,7 +39,8 @@ Note = class Note extends Model {
 	}
 
   url(){
-    var image = Images.findOne(this.image_id)
+    var image = Images.findOne({_id:this.image_id})
+		console.log(image)
     if(image) return image.link();
     else return this.link;
   }
@@ -48,7 +49,7 @@ Note = class Note extends Model {
   toJSON(){
     var data = {type:this.type, createdAt: this.createdAt, updatedAt:this.updatedAt};
     if(this.type == "image"){
-      data.url = this.url(); 
+      data.url = this.url();
     }
     if(this.type == "text"){
       data.content = this.content;

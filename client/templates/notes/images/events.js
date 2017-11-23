@@ -14,8 +14,8 @@ Template.uploadImages.events({
   'click #validerImage': function (e, template) {
     e.preventDefault();
     var file = template.find('#fileInput').files[0];
-    var legend = e.target.form.legend.value; 
-    var parent_id = e.target.form.parent_id.value; 
+    var legend = e.target.form.legend.value;
+    var parent_id = e.target.form.parent_id.value;
     var type = "image";
 
     if(file){
@@ -38,14 +38,20 @@ Template.uploadImages.events({
         n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend })
         n.save()
         $(".action").hide();
-        
+
       }
 
       template.currentUpload.set(false);
     });
 
     uploadInstance.start();
-    }
+  } else {
+    var url = template.find('#linkinput').value;
+    console.log(url);
+    n = new Note({type:"image", parent_id:parent_id, link: url, legend:legend })
+    n.save()
+    $(".action").hide();
+  }
   }
 });
 
