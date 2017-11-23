@@ -3,10 +3,17 @@
       <div class="container">
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
+            {{#if isAdmin}}
+
+            <li><a href="{{pathFor 'flux'}}">Flux</a></li>
             <li><a href="{{pathFor 'chapitres'}}">Chapitres</a></li>
-            <li><a href="{{pathFor 'chapitres'}}">Flux</a></li>
-            <li><a href="{{pathFor 'chapitres'}}">Mode d'emploi</a></li>
-            <li><a href="{{pathFor 'metas'}}">Metas</a></li>
+            <li><a href="{{pathFor 'guide'}}">Mode d'emploi</a></li>
+            <li><a href="{{pathFor 'metasAutocomplete'}}">Metas</a></li>
+            {{else}}
+            <li><a href="{{pathFor 'flux'}}">Flux</a></li>
+            <li><a href="{{pathFor 'guide'}}">Mode d'emploi</a></li>
+            {{/if}}
+
             <!--
             <li><a href="{{pathFor 'transcription'}}">transcription</a></li>
             <li><a href="{{pathFor 'guide'}}">mode d'emploi</a></li>

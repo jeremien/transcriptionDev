@@ -16,5 +16,9 @@ Template.chapitresBar.events({
 	"click .chapDiv": function(e, t){
 		var id = e.currentTarget.getAttribute("id");
 		selectedChapitre.set(id);
+
+		// on va sur la page flux
+		Router.go('flux');
 	}
+
 });

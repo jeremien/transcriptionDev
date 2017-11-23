@@ -9,14 +9,14 @@ MAIN ENTRY FOR THE SITE
 <template name="main">
 
     {{> navbar}}
-    {{> chapitresBar}}
-    {{!--
-    <div class="container">
-    <div class="row">
-    <div class="col-md-12">
+
     {{> yield}}
-    </div>
-    </div>
-    </div>
-    --}}
+
+
+</template>
+
+<template name="chapitres">
+  <br><br>
+<h1>edition des chapitres</h1>
+{{> chapitresBar}}
 </template>
