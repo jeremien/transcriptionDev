@@ -9,9 +9,12 @@
       <p>ajouter une url</p>
       <input id="linkinput" type="text" placeholder="url" />
       <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
+      {{#if editing _id}}
+      <textarea name="legend" class="textImage" rows="2" cols="30" placeholder="commenter l'image">{{legend}}</textarea>
+      {{else}}
       <textarea name="legend" class="textImage" rows="2" cols="30" placeholder="commenter l'image"></textarea>
-        <input type="hidden" name="parent_id" value={{_id}}>
-        <input type="submit" id="validerImage" value="Ajouter une image">
+      {{/if}}
+      <input type="submit" id="validerImage" value="envoyer l'image">
   </form>
   {{/with}}
 </template>
@@ -27,10 +30,20 @@
 
 
 <template name="blocImage">
-  <div class="box">
-    {{> date date=createdAt}}
-    <img class="imageBloc" src="{{url}}">
-    <legend>{{#markdown}} {{legend}} {{/markdown}}</legend>
-    {{> my_notes}}
-  </div>
+  {{#if editing _id}}
+
+    {{> uploadImages}}
+
+
+
+
+     <a href="#" class="event_cancelEditNote">Annuler</a>
+  {{else}}
+    <div class="box">
+      {{> date date=createdAt}}
+      <img class="imageBloc" src="{{url}}">
+      <legend>{{#markdown}} {{legend}} {{/markdown}}</legend>
+      {{> my_notes}}
+    </div>
+  {{/if}}
 </template>
