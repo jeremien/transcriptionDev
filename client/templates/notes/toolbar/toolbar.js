@@ -18,7 +18,7 @@ Template.noteToolBar.events({
 
   "click .event_showFormToAddNewNote" : function(event, template){
     event.preventDefault();
-
+    isNew.set(true);
     var element =  "#" + event.target.getAttribute('data-menu');
     if($(element).is(":visible")){
       $(element).hide();
@@ -30,6 +30,7 @@ Template.noteToolBar.events({
   }, 
   "click .event_showFormToEditNote" : function(event, template){
     event.preventDefault();
+    isNew.set(false);
 
     var element =  "#" + event.target.getAttribute('data-menu');
     if($(element).is(":visible")){
