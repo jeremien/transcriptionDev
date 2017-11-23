@@ -1,12 +1,14 @@
 <template name="flux">
 
-{{> chapitresBar}}
-
 <div id="flux">
+
   {{#if selectedChapitre}}
     {{#with selectedChapitre}}
-      <h1>[{{selectedChapitre.titre}}]</h1>
-      {{> noteToolBar}}
+
+      <h1>titre du chapitre en cours d'édition : {{selectedChapitre.titre}}</h1>
+      <hr>
+      note principal {{> noteToolBar}}
+
       {{#if hasNotes}}
           {{> my_notes}}
       {{else}}
@@ -21,15 +23,14 @@
 </template>
 
 
-
-
-
 <template name="my_notes">
   {{#if hasNotes}}
     <ul>
     {{#each notes}}
-    <li> {{> noteToolBar }}</li>
+
     <li>{{> render}}</li>
+
+    <li> commentaire (note imbriquée) {{> noteToolBar }}</li>
     {{/each}}
     </ul>
   {{/if}}

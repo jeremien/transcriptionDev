@@ -5,13 +5,18 @@
           <ul class="nav navbar-nav">
             {{#if isAdmin}}
 
-            <li><a href="{{pathFor 'flux'}}">Flux</a></li>
             <li><a href="{{pathFor 'chapitres'}}">Chapitres</a></li>
+            <li><a href="{{pathFor 'flux'}}">Flux</a></li>
             <li><a href="{{pathFor 'guide'}}">Mode d'emploi</a></li>
             <li><a href="{{pathFor 'metasAutocomplete'}}">Metas</a></li>
+            <li><a href="{{pathFor 'api'}}">api</a></li>
+
             {{else}}
+
+            <li><a href="{{pathFor 'chapitres'}}">Chapitres</a></li>
             <li><a href="{{pathFor 'flux'}}">Flux</a></li>
             <li><a href="{{pathFor 'guide'}}">Mode d'emploi</a></li>
+
             {{/if}}
 
             <!--
@@ -22,7 +27,7 @@
             <li><a href="{{pathFor 'moderation'}}">modération</a></li>
             <li><a href="{{pathFor 'publication'}}">publication</a></li>
             <li><a href="{{pathFor 'carte'}}">carte</a></li>
-            <li><a href="{{pathFor 'api'}}">api</a></li>
+
             -->
           </ul>
         </div>
