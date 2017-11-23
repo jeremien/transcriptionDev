@@ -1,13 +1,11 @@
 <template name="metasAutocomplete">
   <br><br><br>
 
-{{> formMetasAutocomplete}}
-<hr>
-{{> AffichageMetasAutocomplete}}
-
+  {{> formMetasAutocomplete}}
+  <hr>
+  {{> AffichageMetasAutocomplete}}
 
 </template>
-
 
 <template name="formMetasAutocomplete">
   <form id="participants">
@@ -26,13 +24,23 @@
   </form>
 </template>
 
-
 <template name="AffichageMetasAutocomplete">
-  <div class="metasAuto">
-  {{#each metas}}
-    <p>participants : {{participants}}</p>
-    <p>subjects : {{subjects}}</p>
-    <p>keywords : {{keywords}}</p>
-  {{/each}}
-</div>
+  <ul class="metasAuto">
+    <p>Participants</p>
+    {{#each metas}}
+      <li>{{participants}}</li>
+    {{/each}}
+  </ul>
+  <ul class="metasAuto">
+    <p>Sujets</p>
+    {{#each metas}}
+      <li>{{subjects}}</li>
+    {{/each}}
+  </ul>
+  <ul class="metasAuto">
+    <p>Mot-clés</p>
+    {{#each metas}}
+      <li>{{keywords}}</li>
+    {{/each}}
+  </ul>
 </template>

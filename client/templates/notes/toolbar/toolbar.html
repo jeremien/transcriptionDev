@@ -3,11 +3,22 @@
 -->
 <template name="noteToolBar">
         <div class="toolBar">
+
+            {{#if isAdmin}}
+            <button class="btn btn-success btn-sm event_showFormToAddNewNote" data-menu="all_{{_id}}">ajouter</button>
+            <button style="float:right" class="btn btn-danger btn-sm event_removeNote">supprimer</button>
+            <button style="float:right" data-menu="all_{{_id}}" data-edit="true" class="btn btn-warning btn-sm event_showFormToEditNote">éditer</button>
+            {{else}}
+            <button class="btn btn-success btn-sm event_showFormToAddNewNote" data-menu="all_{{_id}}">ajouter</button>
+            {{/if}}
+          <!--
           <ul>
             <li class="event_showFormToAddNewNote" data-menu="all_{{_id}}">+</li>
             <li style="float:right" class="event_removeNote">[X]</li>
             <li style="float:right" data-menu="all_{{_id}}" data-edit="true" class="event_showFormToEditNote">[E]</li>
           </ul>
+          -->
+
         {{> addAll}}
         </div>
 </template>
