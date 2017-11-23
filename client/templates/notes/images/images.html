@@ -4,10 +4,10 @@
     <span id="progress">{{progress.get}}%</span>
   {{else}}
   <form name="form_{{_id}}">
-      <textarea name="legend" class="textImage" rows="2" cols="30" placeholder="commenter l'image"></textarea>
       <input id="fileInput" type="file" />
       <input id="linkinput" type="text" placeholder="url" />
       <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
+      <textarea name="legend" class="textImage" rows="2" cols="30" placeholder="commenter l'image"></textarea>
         <input type="hidden" name="parent_id" value={{_id}}>
         <input type="submit" id="validerImage" value="envoyer l'image">
   </form>

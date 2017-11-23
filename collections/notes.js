@@ -41,6 +41,7 @@ Note = class Note extends Model {
   url(){
     var image = Images.findOne(this.image_id)
     if(image) return image.link();
+    else return this.link;
   }
 
 
