@@ -14,7 +14,7 @@
       {{else}}
       <textarea name="legend" class="textImage" rows="2" cols="30" placeholder="commenter l'image"></textarea>
       {{/if}}
-      <input type="submit" id="validerImage" value="envoyer l'image">
+      <input type="submit" id="validerImage" value="Valider">
   </form>
   {{/with}}
 </template>
@@ -31,6 +31,7 @@
 
 <template name="blocImage">
   {{#if editing _id}}
+    {{> formMeta}}
 
     {{> uploadImages}}
 

@@ -1,3 +1,12 @@
+// TODO Redo this mess !
+Template.blocImage.events({
+  "click .event_cancelEditNote" : function(e,t){
+    e.preventDefault();
+    selectedNote.set(null);
+  }
+
+
+});
 
 Template.uploadImages.onCreated(function () {
   this.currentUpload = new ReactiveVar(false);
@@ -47,6 +56,7 @@ Template.uploadImages.events({
             var n = Note.findOne({image_id:image_id});
             n.image_id = fileObj._id;
             n.legend = legend;
+            n.meta = form2js("form_meta_" + this._id);
             n.save();
           } else {
             // Création d'une nouvelle note avec une nouvelle image
@@ -64,9 +74,18 @@ Template.uploadImages.events({
       uploadInstance.start();
     } else {
       var url = template.find('#linkinput').value;
-      n = new Note({type:"image", parent_id:parent_id, link: url, legend:legend })
-        n.save()
+      console.log(url);
+      if(url==""){
+            var n = Note.findOne({image_id:image_id});
+            n.meta = form2js("form_meta_" + this._id);
+            n.save();
+            $(".action").hide();
+            selectedNote.set(null);
+      } else {
+        n = new Note({type:"image", parent_id:parent_id, link: url, legend:legend });
+        n.save();
         $(".action").hide();
+      }
     }
   }
 });
