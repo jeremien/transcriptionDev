@@ -1,4 +1,9 @@
 Template.metasAutocomplete.events({
+
+  'click form input': function(e){
+    e.target.value ='';
+  },
+
   'submit form#participants': function(e) {
     // empêche le rechargement de la page
     e.preventDefault();
@@ -8,6 +13,8 @@ Template.metasAutocomplete.events({
     };
     // on insère le tout dans la base avec un id unique
     metas._id = Metas.insert(metas);
+
+    $('input[name=participants]').val('');
 
     //$("#participants input[name=participants]").val() = "";
 
@@ -20,8 +27,11 @@ Template.metasAutocomplete.events({
     var metas = {
       subjects: $(e.target).find('[name=subjects]').val()
     };
+
     // on insère le tout dans la base avec un id unique
     metas._id = Metas.insert(metas);
+
+    $('input[name=subjects]').val('');
   },
 
   'submit form#keywords': function(e) {
@@ -34,5 +44,7 @@ Template.metasAutocomplete.events({
     };
     // on insère le tout dans la base avec un id unique
     metas._id = Metas.insert(metas);
+
+    $('input[name=keywords]').val('');
   }
 });

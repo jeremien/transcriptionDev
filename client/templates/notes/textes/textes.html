@@ -1,10 +1,10 @@
 <template name="addTexte">
 <div id="text_{{_id}}" class="item">
     <form id="form_{{_id}}">
-      <textarea class="textInput" rows="5" cols="40" name="content" placeHolder="Enter your text"></textarea>
+      <textarea class="textInput" rows="10" cols="40" name="content" placeHolder="Écrivez votre texte"></textarea>
       <input type="hidden" name="parent_id" value={{_id}}>
       <input type="hidden" name="type" value="text">
-      <button class="addTexteNoteButton">Ajouter</button>
+      <button class="addTexteNoteButton">Ajouter du texte</button>
     </form>
   </div>
 </template>
