@@ -1,0 +1,38 @@
+<template name="metasAutocomplete">
+  <br><br><br>
+
+{{> formMetasAutocomplete}}
+<hr>
+{{> AffichageMetasAutocomplete}}
+
+
+</template>
+
+
+<template name="formMetasAutocomplete">
+  <form id="participants">
+    <input type="text" name="participants" value="participants">
+    <input type="submit" value="envoi">
+  </form>
+
+  <form id="subjects">
+    <input type="text" name="subjects" value="subjects">
+    <input type="submit" value="envoi">
+  </form>
+
+  <form id="keywords">
+    <input type="text" name="keywords" value="keywords">
+    <input type="submit" value="envoi">
+  </form>
+</template>
+
+
+<template name="AffichageMetasAutocomplete">
+  <div class="metasAuto">
+  {{#each metas}}
+    <p>participants : {{participants}}</p>
+    <p>subjects : {{subjects}}</p>
+    <p>keywords : {{keywords}}</p>
+  {{/each}}
+</div>
+</template>

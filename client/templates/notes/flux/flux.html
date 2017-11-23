@@ -1,4 +1,7 @@
 <template name="flux">
+
+{{> chapitresBar}}
+
 <div id="flux">
   {{#if selectedChapitre}}
     {{#with selectedChapitre}}
@@ -7,7 +10,7 @@
       {{#if hasNotes}}
           {{> my_notes}}
       {{else}}
-        <h1>Ajoutez des notes...</h1> 
+        <h1>Ajoutez des notes...</h1>
       {{/if}}
     {{/with}}
   {{else}}
