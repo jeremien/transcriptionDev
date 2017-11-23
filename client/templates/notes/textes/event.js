@@ -8,6 +8,7 @@ Template.blockTexte.events({
   "click .event_updateNoteButton" : function(e,t){
     e.preventDefault();
     var element = t.find("#new_value_for_"+this._id);
+    this.meta = form2js("form_meta_" + this._id);
     this.content = element.value;
     this.save();
     selectedNote.set(null);
