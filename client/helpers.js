@@ -24,3 +24,14 @@ function addZero(i) {
                     }
           return i;
 }
+
+
+
+selectedNote = new ReactiveVar(null);
+
+
+Template.registerHelper(
+  "editing", (id)=> {
+    return selectedNote.get() == id;
+  }    
+)
