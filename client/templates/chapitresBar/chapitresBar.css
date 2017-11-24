@@ -1,5 +1,5 @@
 #chapitresBar{
-    position: absolute;
+    /*position: absolute;*/
     background-color: rgb(230, 230, 230);
 
     top: 50px;
@@ -45,7 +45,6 @@
 }
 
 .chapDiv p{
-    font-family: monospace;
     font-size: 0.9em;
     margin: 0px;
     padding: 0px;

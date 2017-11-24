@@ -3,7 +3,7 @@ Template.metasAutocomplete.events({
   'click form input': function(e){
     e.target.value ='';
   },
-
+  /*
   'submit form#participants': function(e) {
     // empêche le rechargement de la page
     e.preventDefault();
@@ -32,7 +32,7 @@ Template.metasAutocomplete.events({
     metas._id = Metas.insert(metas);
 
     $('input[name=subjects]').val('');
-  },
+  },*/
 
   'submit form#keywords': function(e) {
     // empêche le rechargement de la page

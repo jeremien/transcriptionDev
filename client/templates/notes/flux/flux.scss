@@ -1,27 +1,31 @@
+#flux {
+  display: flex;
+  flex-direction: column;
+  //background-color:red;
+  align-items: center;
+  margin-top: 5%;
 
+  button {
+    //margin-bottom:20px;
 
-.note {
-
-
-    //background-color: rgb(250,0,0,0.5);
-
-
-  h1 {
-    font-size: 3rem;
 
   }
 
-  h2 {
-    font-size: 2.5rem;
+  ol {
+    border-left: solid 1px blue;
+    width: 80%;
+    //padding:20px;
+
+    li {
+      padding:10px;
+      //margin:2%;
+
+      .imageBloc {
+
+        width:100%;
+
+      }
+
+    }
   }
-
-  p {
-  font-size: 2rem;
-  }
-}
-
-.box {
-
-
-
 }

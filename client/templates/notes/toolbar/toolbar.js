@@ -1,14 +1,14 @@
 // meta autocompletion
 
 Template.formMeta.rendered = function() {
-  AutoCompletion.init("input[name=participants]");
-  AutoCompletion.init("input[name=subjects]");
+  //AutoCompletion.init("input[name=participants]");
+  //AutoCompletion.init("input[name=subjects]");
   AutoCompletion.init("input[name=keywords]");
   //AutoCompletion.enableLogging = true;
 }
 
 Template.formMeta.events = {
-  'keyup input[name=participants]': function() {
+  /*'keyup input[name=participants]': function() {
     AutoCompletion.autocomplete({
       element: 'input[name=participants]', // DOM identifier for the element
       collection: Metas, // MeteorJS collection object
@@ -31,7 +31,7 @@ Template.formMeta.events = {
       }
     }); // Sort object to filter results with
     //filter: { 'gender': 'female' }}); // Additional filtering
-  },
+  },*/
   'keyup input[name=keywords]': function() {
     AutoCompletion.autocomplete({
       element: 'input[name=keywords]', // DOM identifier for the element

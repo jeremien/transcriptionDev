@@ -1,26 +1,26 @@
 <template name="uploadImages">
+
   {{#with currentUpload}}
     Uploading <b>{{file.name}}</b>:
     <span id="progress">{{progress.get}}%</span>
   {{else}}
   <form name="form_{{_id}}">
-      <p>charger une image</p>
+      <h4>Ajouter une image</h4>
       <input id="fileInput" type="file" />
-      <p>ajouter une url</p>
+      <h4>ou ajouter l'url d'une image</h4>
       <input id="linkinput" type="text" placeholder="url" />
-      <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
       {{#if editing _id}}
-      <textarea name="legend" class="textImage" rows="2" cols="30" placeholder="commenter l'image">{{legend}}</textarea>
+      <h4>Ajouter une légende</h4>
+      <textarea name="legend" class="textImage" placeholder="commenter l'image">{{legend}}</textarea>
       {{else}}
-      <textarea name="legend" class="textImage" rows="2" cols="30" placeholder="commenter l'image"></textarea>
+      <h4>Ajouter une légende</h4>
+      <textarea name="legend" class="textImage" placeholder="commenter l'image"></textarea>
       {{/if}}
-      <input type="submit" id="validerImage" value="Valider">
+      <button type="submit" id="validerImage" value="Valider l'image">Valider l'image</button>
   </form>
   {{/with}}
+
 </template>
-
-
-
 
 <template name="addImage">
   <div id="image_{{_id}}" class="item">
@@ -32,11 +32,7 @@
 <template name="blocImage">
   {{#if editing _id}}
     {{> formMeta}}
-
     {{> uploadImages}}
-
-
-
 
      <a href="#" class="event_cancelEditNote">Annuler</a>
   {{else}}
