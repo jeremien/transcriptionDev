@@ -8,30 +8,6 @@ Template.formMeta.rendered = function() {
 }
 
 Template.formMeta.events = {
-  /*'keyup input[name=participants]': function() {
-    AutoCompletion.autocomplete({
-      element: 'input[name=participants]', // DOM identifier for the element
-      collection: Metas, // MeteorJS collection object
-      field: 'participants', // Document field name to search for
-      limit: 0, // Max number of elements to show
-      sort: {
-        name: 1
-      }
-    }); // Sort object to filter results with
-    //filter: { 'gender': 'female' }}); // Additional filtering
-  },
-  'keyup input[name=subjects]': function() {
-    AutoCompletion.autocomplete({
-      element: 'input[name=subjects]', // DOM identifier for the element
-      collection: Metas, // MeteorJS collection object
-      field: 'subjects', // Document field name to search for
-      limit: 0, // Max number of elements to show
-      sort: {
-        name: 1
-      }
-    }); // Sort object to filter results with
-    //filter: { 'gender': 'female' }}); // Additional filtering
-  },*/
   'keyup input[name=keywords]': function() {
     AutoCompletion.autocomplete({
       element: 'input[name=keywords]', // DOM identifier for the element
@@ -54,6 +30,14 @@ Template.noteToolBar.helpers({
 
 
 Template.noteToolBar.events({
+  'click input': function(e){
+    console.log('click');
+    e.currentTarget.value = "";
+  },
+  'click textarea': function(e){
+    console.log('click');
+    e.currentTarget.value = "";
+  },
   "click .addTexteNoteButton": function(event, t) {
     event.preventDefault();
 

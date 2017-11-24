@@ -33,14 +33,13 @@
   {{#if editing _id}}
     {{> formMeta}}
     {{> uploadImages}}
-
      <a href="#" class="event_cancelEditNote">Annuler</a>
   {{else}}
-    <div class="box">
+
       {{> date date=createdAt}}
       <img class="imageBloc" src="{{url}}">
-      <legend>{{#markdown}} {{legend}} {{/markdown}}</legend>
+      {{#markdown}} {{legend}} {{/markdown}}
       {{> my_notes}}
-    </div>
+
   {{/if}}
 </template>

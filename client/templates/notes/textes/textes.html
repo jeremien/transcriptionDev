@@ -18,11 +18,11 @@
 
 
 <template name="blockTexte">
-  <div class="box">
+
    {{> date date=createdAt}}
   {{#if editing _id}}
   {{> formMeta}}
-  <textarea id="new_value_for_{{_id}}" class="textInput" rows="5" cols="40" name="content" placeHolder="Enter your text">{{content}}</textarea>
+  <textarea id="new_value_for_{{_id}}" class="textInput" name="content">{{content}}</textarea>
    <button class="event_updateNoteButton">Valider</button>
    <a href="#" class="event_cancelEditNote">Annuler</a>
 
@@ -32,7 +32,7 @@
     </div>
   {{/if}}
   {{> my_notes}}
-  </div>
+
 </template>
 
 

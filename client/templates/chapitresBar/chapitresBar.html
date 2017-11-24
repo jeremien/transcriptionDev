@@ -1,17 +1,17 @@
 <template name="chapitresBar">
+
     <div id="chapitresBar">
         {{#if isAdmin}}
             {{> ChapitresBar_admin}}
         {{/if}}
 
         {{#each chapitres}}
-
+        <div class="element">
             <div class="chapDiv {{isSelectedCapitre (_id)}}" id="{{_id}}">
-                <h1>{{titre}}</h1>
+                <h3>{{titre}}</h3>
                 <p>{{createdAt}}</p>
             </div>
-
+        </div>
         {{/each}}
     </div>
-  
 </template>

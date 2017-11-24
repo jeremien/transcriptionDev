@@ -4,8 +4,10 @@
 
   {{#if selectedChapitre}}
     {{#with selectedChapitre}}
+
+    <div class="btnNotePrincipale">
       {{> noteToolBar}}
-      <!--<h3>En cours d'édition : {{selectedChapitre.titre}}</h3>-->
+    </div>
 
 
       {{#if hasNotes}}
@@ -15,9 +17,8 @@
       {{/if}}
     {{/with}}
   {{else}}
-    <h3>Sélectionnez un chapitre...</h3>
     {{> chapitresBar}}
-
+    
   {{/if}}
 
 </div>
@@ -32,8 +33,9 @@
 
     <li>{{> render}}</li>
 
+    <div class="btnNoteSecondaire">
     {{> noteToolBar }}
-
+    </div>
     {{/each}}
   </ol>
   {{/if}}
