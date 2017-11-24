@@ -1,0 +1,45 @@
+@import 'main';
+
+
+#chapitresBar {
+  display:flex;
+  width:80%;
+  //border: solid 1px black;
+  flex-direction: column;
+
+  h3 {
+    font-size:$size2;
+  }
+
+  .element {
+  border-bottom: solid 1px $color2;
+  padding:20px;
+  background-color:$color3;
+
+  .chapDiv {
+
+    &:hover {
+      //background-color:$color;
+      color:$color4;
+      cursor:pointer;
+    }
+
+  }
+
+    input {
+      width:100%;
+
+      border: solid 1px $color;
+      padding:5px;
+      color:$color;
+
+      &:focus {
+        border: solid 1px $color2;
+        //background-color:$color6;
+        outline: none;
+      }
+    }
+
+  }
+
+}

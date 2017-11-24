@@ -1,0 +1,40 @@
+$font: 'Anarchy Book', arial, sans-serif;
+
+//couleurs
+
+$color: rgb(28, 76, 200);
+$color2: rgb(213, 22, 114);
+$color3: white;
+$color4: rgb(70, 186, 47);
+$color5: black;
+$color6: rgba(126, 126, 126, 0.31);
+
+//font-size
+$size:1.2rem;
+$size2:1.8rem;
+$size3:2rem;
+
+body {
+  //font-family: $font;
+  background-color: rgba(235, 237, 238, 0.20);
+
+
+
+  .navbar {
+    heigth: 100px;
+    border-bottom: solid 1px $color;
+    background-color: $color3;
+    font-size:$size;
+    ul {
+      li {
+        a {
+          color: $color;
+
+          &:hover {
+            color: $color2;
+          }
+        }
+      }
+    }
+  }
+}

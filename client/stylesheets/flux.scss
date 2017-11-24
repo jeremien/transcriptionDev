@@ -1,0 +1,104 @@
+@import 'main';
+
+#flux {
+  display: flex;
+  flex-direction: column;
+  //background-color:red;
+  align-items: center;
+  margin-top: 5%;
+
+  .date {
+    border-bottom: dotted 1px $color;
+    font-size:$size;
+    font-weight: bold;
+    color:$color;
+  }
+
+  .note {
+
+      font-family: $font;
+      font-size: $size3+0.2;
+      color:$color5;
+
+  }
+
+  button {
+    //border: none;
+    //color: $color;
+    //font-size: 1.2rem;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    //background-color: $color3;
+    border-radius: 0;
+
+
+  }
+
+  .event_showFormToAddNewNote {
+    color: $color;
+    border: none;
+    &:hover {
+      background-color: $color;
+      color: $color3;
+    }
+
+  }
+
+  .event_removeNote {
+    color: $color2;
+    border: none;
+    &:hover {
+      background-color: $color2;
+      color: $color3;
+    }
+  }
+
+  .event_showFormToEditNote {
+    color: $color4;
+    border: none;
+    &:hover {
+      background-color: $color4;
+      color: $color3;
+    }
+  }
+
+  .btnNotePrincipale {
+    margin-top: 30px;
+    //border-bottom: solid 1px $color2;
+    //background-color:$color;
+    //font-size:$size3;
+
+  }
+
+  .btnNoteSecondaire {
+    margin-top: 20px;
+    border-top: dotted 1px $color;
+    font-size: $size;
+  }
+
+  ol {
+    border-left: solid 1px $color2;
+    width: 80%;
+    //padding:20px;
+    list-style-type: decimal-leading-zero;
+    font-size:$size;
+    //font-weight: bold;
+    color:$color;
+
+    li {
+      padding: 10px;
+      //margin:2%;
+
+      legend {
+        font-size:$size;
+      }
+
+      .imageBloc {
+        width: 50%;
+        padding:5px;
+      }
+    }
+  }
+}
