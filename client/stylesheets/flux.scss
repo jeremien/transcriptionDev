@@ -28,9 +28,8 @@
     //font-size: 1.2rem;
     display: inline-block;
     text-align: center;
-    padding: 5px;
-    margin: 5px;
-    //background-color: $color3;
+
+
     border-radius: 0;
 
 
@@ -39,6 +38,9 @@
   .event_showFormToAddNewNote {
     color: $color;
     border: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: $color3;
     &:hover {
       background-color: $color;
       color: $color3;
@@ -49,6 +51,9 @@
   .event_removeNote {
     color: $color2;
     border: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: $color3;
     &:hover {
       background-color: $color2;
       color: $color3;
@@ -58,6 +63,9 @@
   .event_showFormToEditNote {
     color: $color4;
     border: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: $color3;
     &:hover {
       background-color: $color4;
       color: $color3;
