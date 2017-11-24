@@ -7,7 +7,7 @@
 
       <h1>chapitre en cours d'édition : {{selectedChapitre.titre}}</h1>
       <hr>
-    chapitre {{> noteToolBar}}
+    {{> noteToolBar}}
 
       {{#if hasNotes}}
           {{> my_notes}}
@@ -24,13 +24,14 @@
 
 
 <template name="my_notes">
+
   {{#if hasNotes}}
     <ol>
     {{#each notes}}
 
     <li>{{> render}}</li>
 
-    commentaire {{> noteToolBar }}
+    {{> noteToolBar }}
     {{/each}}
   </ol>
   {{/if}}
