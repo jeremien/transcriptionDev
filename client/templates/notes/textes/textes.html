@@ -21,11 +21,20 @@
 
    {{> date date=createdAt}}
   {{#if editing _id}}
+  <div class="container-modifNote">
+    <div class="item">
+    <h4> modifier la note</h4>
   {{> formMeta}}
+  </div>
+  <div class="item">
   <textarea id="new_value_for_{{_id}}" class="textInput" name="content">{{content}}</textarea>
-   <button class="event_updateNoteButton">Valider</button>
-   <a href="#" class="event_cancelEditNote">Annuler</a>
+   </div>
+  <div class="item">
+    <button class="event_updateNoteButton">Valider</button>
+    <button class="event_cancelEditNote">Annuler</button>
+  </div>
 
+  </div>
   {{else}}
     <div class="note texte">
       {{#markdown}}{{content}}{{/markdown}}
