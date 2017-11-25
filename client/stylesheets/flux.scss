@@ -8,10 +8,14 @@
   margin-top: 5%;
 
   .date {
-    border-bottom: dotted 1px $color;
+    border-bottom: solid 2px $color;
     font-size:$size;
     font-weight: bold;
     color:$color;
+  }
+
+  .meta {
+    float:right;
   }
 
   .note {
@@ -87,7 +91,7 @@
   }
 
   ol {
-    border-left: solid 1px $color2;
+    border-left: solid 2px $color2;
     width: 80%;
     //padding:20px;
     list-style-type: decimal-leading-zero;

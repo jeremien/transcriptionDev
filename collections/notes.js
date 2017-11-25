@@ -45,7 +45,6 @@ Note = class Note extends Model {
     else return this.link;
   }
 
-
   toJSON(){
     var data = {type:this.type, createdAt: this.createdAt, updatedAt:this.updatedAt};
     if(this.type == "image"){

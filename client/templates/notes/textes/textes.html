@@ -16,7 +16,6 @@
 
 </template>
 
-
 <template name="blockTexte">
 
    {{> date date=createdAt}}
@@ -36,54 +35,12 @@
 
   </div>
   {{else}}
+    <p class="meta"><span>{{meta.keywords}}</span></p>
     <div class="note texte">
       {{#markdown}}{{content}}{{/markdown}}
     </div>
+
   {{/if}}
   {{> my_notes}}
-
-</template>
-
-
-
-
-
-
-
-
-
-
-<template name="ajoutTexteOLD">
-
-  <select class="select-noms">
-    <option selected>noms</option>
-    <option value="Carole Brandon">Carole Brandon</option>
-    <option value="Jean-jacques Gay">Jean-jacques Gay</option>
-    <option value="Itzhak Golberg">Itzhak Golberg</option>
-    <option value="Carole Nosella">Carole Nosella</option>
-    <option value="Vincent Duché">Vincent Duché</option>
-    <option value="Vincent Ciciliato">Vincent Ciciliato</option>
-    <option value="David-Olivier Lartigaud">David-Olivier Lartigaud</option>
-  </select>
-
-  <select class="select-sujets">
-    <option selected>sujets</option>
-    <option value="modération">modération</option>
-    <option value="intervention">intervention</option>
-  </select>
-
-  <select class="select-tags-texte">
-    <option selected>mots-clés</option>
-    <option value="design">design</option>
-    <option value="architecture">architecture</option>
-  </select>
-  <br><br>
-  <textarea class="pseudo" rows="2" cols="20" placeholder="pseudo"></textarea>
-
-  <br><br>
-  <!--<div id="summernote"></div>-->
-  <textarea class="text-markdown" rows="8" cols="80"></textarea>
-
-  <input type="submit" id="validerTranscription" value="envoyer la transcription">
 
 </template>

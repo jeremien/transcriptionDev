@@ -42,8 +42,10 @@
   {{else}}
 
       {{> date date=createdAt}}
+      <p class="meta"><span>{{meta.keywords}}</span></p>
       <img class="imageBloc" src="{{url}}">
-      {{#markdown}} {{legend}} {{/markdown}}
+      <p class=legende>{{#markdown}} {{legend}} {{/markdown}}</p>
+
       {{> my_notes}}
 
   {{/if}}
