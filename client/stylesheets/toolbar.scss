@@ -3,7 +3,8 @@
 .container-modifImage {
   display:flex;
   flex-direction:row;
-  width:800px;
+  width:500px;
+  height:300px;
   color:$color5;
   background-color: $color4;
 
@@ -49,7 +50,8 @@
 .container-modifNote {
   display:flex;
   flex-direction:row;
-  width:800px;
+  width:100%;
+  height:400px;
   color:$color5;
   background-color: $color4;
 
@@ -70,7 +72,7 @@
 
   textarea {
     width: 100%;
-    height:100%;
+    height:60%;
     border: solid 1px $color;
     padding:5px;
     color:$color;
