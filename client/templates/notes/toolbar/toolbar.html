@@ -26,9 +26,15 @@
 <template name="addAll">
   <div id="all_{{_id}}" class="action addAll">
     <div class="container-ajoutnote">
+      <div class="element">
+        {{> formMeta }}
+        {{> addTexte}}
+      </div>
+      <div class="element">
       {{> formMeta }}
-      {{> addTexte}}
       {{> addImage}}
+      </div>
+
     </div>
   </div>
 
