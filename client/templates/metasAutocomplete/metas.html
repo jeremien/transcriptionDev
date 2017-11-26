@@ -1,10 +1,17 @@
 <template name="metasAutocomplete">
-  <br><br><br>
 
+  <div class="metaAuto">
+  <div class="container">
+
+  <div class="element">
   {{> formMetasAutocomplete}}
-  <hr>
-  {{> AffichageMetasAutocomplete}}
+  </div>
 
+  <div class="element">
+  {{> AffichageMetasAutocomplete}}
+  </div>
+  </div>
+  </div>
 </template>
 
 <template name="formMetasAutocomplete">
@@ -20,7 +27,7 @@
 
   <form id="keywords">
     <input type="text" name="keywords" value="keywords">
-    <input type="submit" value="envoi">
+    <button type="submit" value="envoi">envoi</button>
   </form>
 </template>
 

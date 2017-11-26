@@ -46,5 +46,6 @@ Template.metasAutocomplete.events({
     metas._id = Metas.insert(metas);
 
     $('input[name=keywords]').val('');
+    //e.target.value ='';
   }
 });
