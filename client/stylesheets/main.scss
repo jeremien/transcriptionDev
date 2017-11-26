@@ -23,6 +23,7 @@ body {
     border-bottom: solid 1px $color;
     background-color: $color3;
     font-size: $size;
+    font-weight:bold;
 
     ul {
       li {
@@ -45,7 +46,7 @@ body {
 
     .navbar-text {
       color:$color2;
-      font-weight:bold;
+
       padding-top:2px;
     }
   }
