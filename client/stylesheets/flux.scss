@@ -49,41 +49,41 @@
   }
 
   .event_showFormToAddNewNote {
-    color: $color;
+    color: $color3;
     border: none;
     padding: 5px;
     margin: 5px;
-    background-color: $color3;
+    background-color: $color;
 
     &:hover {
-      background-color: $color;
-      color: $color3;
+      background-color: $color3;
+      color: $color;
     }
   }
 
   .event_removeNote {
-    color: $color2;
+    color: $color3;
     border: none;
     padding: 5px;
     margin: 5px;
-    background-color: $color3;
+    background-color: $color2;
 
     &:hover {
-      background-color: $color2;
-      color: $color3;
+      background-color: $color3;
+      color: $color2;
     }
   }
 
   .event_showFormToEditNote {
-    color: $color4;
+    color: $color3;
     border: none;
     padding: 5px;
     margin: 5px;
-    background-color: $color3;
+    background-color: $color4;
 
     &:hover {
-      background-color: $color4;
-      color: $color3;
+      background-color: $color3;
+      color: $color4;
     }
   }
 
