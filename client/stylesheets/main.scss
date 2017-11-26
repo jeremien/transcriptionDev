@@ -1,4 +1,5 @@
 $font: 'Anarchy Book', arial, sans-serif;
+$font2: 'Computer Modern Concrete', times, serif;
 //couleurs
 $color: rgb(28, 76, 200);
 $color2: rgb(213, 22, 114);
@@ -7,6 +8,7 @@ $color4: rgb(70, 186, 47);
 $color5: black;
 $color6: rgba(126, 126, 126, 0.31);
 $color7: rgb(213, 213, 213); //$color7:
+$color8: rgba(221, 221, 221, 0.40);
 //font-size
 $size: 1.2rem;
 $size2: 1.8rem;
@@ -26,12 +28,25 @@ body {
       li {
         a {
           color: $color;
+          background-color: $color3;
 
           &:hover {
             color: $color2;
+            background-color: $color3;
+          }
+
+          &:focus {
+            outline:0;
+            background-color: $color3;
           }
         }
       }
+    }
+
+    .navbar-text {
+      color:$color2;
+      font-weight:bold;
+      padding-top:2px;
     }
   }
 
@@ -42,16 +57,27 @@ body {
     background-color:$color3;
     padding-top:5px;
     //margin:10px;
+    //border-top: solid 1px $color;
+
     .container {
       display:flex;
       flex-direction: row ;
       justify-content:space-around;
       align-contenr:center;
-      .element {
-        //padding:5%;
+      font-size:$size;
 
-        button {
-          //margin-top:20px;
+      button {
+        background-color: $color3;
+        color: $color4;
+        border: solid 1px $color4;
+        padding: 3px;
+        //margin-top: 5px;
+        border-radius: 0;
+
+        &:hover {
+          background-color: $color4;
+          color: $color3;
+          //border: solid 1px $color;
         }
 
       }

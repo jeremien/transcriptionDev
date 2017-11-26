@@ -9,35 +9,34 @@
 
   .date {
     border-bottom: solid 2px $color;
-    font-size:$size;
+    font-size: $size;
     font-weight: bold;
-    color:$color;
+    color: $color;
+    //font-family: $font2;
+    letter-spacing: 0.1rem;
 
     &:before {
-      font-size:$size+0.3;
-      color:$color2;
+      font-size: $size+0.3;
+      color: $color2;
       content: '◷ ';
     }
-
   }
 
   .meta {
-    float:right;
-    //margin-bottom:5px;
-
+    float: right;
+    //font-family: $font2;
+    //font-style:italic;
     &:before {
-      font-size:$size+0.3;
-      color:$color2;
-      content:'● ';
+      font-size: $size+0.3;
+      color: $color2;
+      content: '● ';
     }
   }
 
   .note {
-
-      font-family: $font;
-      font-size: $size3+0.2;
-      color:$color5;
-
+    font-family: $font;
+    font-size: $size3+0.2;
+    color: $color5;
   }
 
   button {
@@ -46,11 +45,7 @@
     //font-size: 1.2rem;
     display: inline-block;
     text-align: center;
-
-
     border-radius: 0;
-
-
   }
 
   .event_showFormToAddNewNote {
@@ -59,11 +54,11 @@
     padding: 5px;
     margin: 5px;
     background-color: $color3;
+
     &:hover {
       background-color: $color;
       color: $color3;
     }
-
   }
 
   .event_removeNote {
@@ -72,6 +67,7 @@
     padding: 5px;
     margin: 5px;
     background-color: $color3;
+
     &:hover {
       background-color: $color2;
       color: $color3;
@@ -84,6 +80,7 @@
     padding: 5px;
     margin: 5px;
     background-color: $color3;
+
     &:hover {
       background-color: $color4;
       color: $color3;
@@ -95,7 +92,6 @@
     //border-bottom: solid 1px $color2;
     //background-color:$color;
     //font-size:$size3;
-
   }
 
   .btnNoteSecondaire {
@@ -109,13 +105,8 @@
     width: 80%;
     //padding:20px;
     list-style-type: decimal-leading-zero;
-    font-size:$size;
     //font-weight: bold;
-    color:$color;
-
-
-
-
+    color: $color;
 
     li {
       padding: 10px;
@@ -123,29 +114,90 @@
 
       .note {
 
-          p {
-            width:80%;
-            margin-top:30px;
+        h1 {
+          font-size:$size2+1.3;
+        }
+
+        h2 {
+          font-size:$size2+0.8;
+        }
+
+        h3 {
+          font-size:$size2+0.5;
+        }
+
+        hr {
+          border-top: 1px solid $color;
+        }
+
+        p {
+          width: 80%;
+          font-size: $size2;
+          line-height:$size+1.2;
+          //margin-top: 30px;
+
+          img {
+            width:40%;
+            //margin-left:auto;
+            //margin-right:auto;
           }
 
-      }
+        }
 
-        .legende {
-          font-size:$size+0.2;
-          padding-left:5px;
-          &:before {
-            font-size:$size;
-            //padding-left:5px;
+        ul {
+          list-style:disc;
+          li {
+            line-height:30%;
+            font-size: $size2;
+          }
+        }
+
+        ol {
+          list-style:lower-latin;
+          border:none;
+          color:$color5;
+          li {
+            line-height:30%;
+            font-size: $size2;
+          }
+        }
+
+        blockquote {
+          margin-left:10%;
+          border-left:dotted 2px $color;
+          margin-top: 10px;
+          line-height:80%;
+        }
+
+        a {
+          color:$color;
+          text-decoration:underline;
+          &:hover {
             color:$color2;
-            content:'► ';
           }
         }
 
 
 
+      }
+
+      .legende {
+        font-family: $font2;
+        font-style:italic;
+        font-size: $size+0.2;
+        padding-left: 5px;
+
+        &:before {
+          font-size: $size;
+          //padding-left:5px;
+          color: $color2;
+          content: '► ';
+        }
+      }
+
       .imageBloc {
-        width: 50%;
-        padding:5px;
+        width: 80%;
+        padding: 5px;
       }
     }
   }

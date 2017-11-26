@@ -1,0 +1,168 @@
+<template name="guide">
+<div class="guide">
+<div class="intro">
+{{#markdown}}
+## Connexion à DDR contexte
+
+Pour vous connecter à l’application, il suffit de rentrer l’url dans votre navigateur. L’url dépend du serveur qui héberge l’application, elle sera indiquée par l’équipe de modération à chaque début de session.
+
+## Choisir un chapitre
+
+Les chapitres sont listés et organisés par ordre de création. Il faut cliquer sur le chapitre de votre choix pour accéder au flux. Le nom du chapitre en cours d’édition est indiqué dans la barre de navigation.
+
+## Les notes de premier niveau
+
+Il y a deux types de notes :
+
+ 1. les notes de premier niveau qui constituent le flux principal
+ 2. les notes imbriquées qui permettent d’annoter les notes de premier niveau
+
+Les notes peuvent être du texte et des images. Dans les deux cas, il est important de renseigner les mot-clés pour pouvoir utiliser le contenu ultérieurement, un rond rouge indique la position des mot-clés. Dans le cas d’une image, il faut aussi ajouter une légende, une flèche rouge indique la position de la légende.
+
+L’ajout se fait avec le bouton *Ajouter une note* en haut de la page.
+Les notes les plus récentes sont affichées en premier, il est possible à tout moment de remonter la page automatiquement à l’aide du bouton *remonter la page* en pied de page. Les boutons *masquer* et *afficher* les images permettent de masquer les images qui sont dans le flux pour améliorer l’expérience de lecture.
+
+## Les notes imbriquées
+
+Les notes imbriquées permettent de discuter le sujet déclaré dans le flux, elle peuvent être utilisées à tout moment pour compléter par du texte, des liens et des images les notes principales.
+Le bouton *Ajouter une note* est toujours présent en bas à gauche de la note.
+
+## Utilisation du format Markdown
+
+Le Markdown est un format de balisage dit *léger* car il permet de formater le texte typographiquement tout en garantissant une lecture confortable sous sa forme non interprétée. Il est facile à utiliser et est interprétable par tous les environnements de développement.
+Pour plus de renseignements sur le format Markdown : [wikipédia](https://fr.wikipedia.org/wiki/Markdown).
+
+L’exemple ci-dessous présente à gauche sa forme brute et à droite sa forme interprétée.
+
+{{/markdown}}
+</div>
+
+<div class="container">
+
+
+
+<div class="element">
+<div class="exemple">
+<p>
+
+<p># Un titre</p>
+
+<p>Les paragraphes sont séparés par un espace.</p>
+
+<p>Un second paragraphe. *Italique*, **gras**</p>
+
+<p>Les listes à puces ressembles à ça :</p>
+
+<p>* une première <br>
+* une seconde <br>
+* encore une autre</p>
+
+<p>> Les blocs de citation <br>
+> sont écrits comme ceci <br>
+> <br>
+ > Vous pouvez multiplier les paragraphes <br>
+> si vous le souhaitez</p>
+
+<p>## Un sous-titre</p>
+
+<p>Voici une liste numérotée:</p>
+
+<p> 1. premier objet</p>
+<p> 2. second objet</p>
+<p> 3. troisième objet</p>
+
+
+<p>### Un intertitre</p>
+
+<p>Maintenant, une liste imbriquée dans une autre :</p>
+
+<p> 1. En premier, prenez ces ingrédients :</p>
+
+<p>* carottes</p>
+<p>* céleri</p>
+<p>* lentilles</p>
+
+<p> 2. Faites bouillir de l’eau.</p>
+
+<p> 3. Placer les légumes dans la casserole.</p>
+
+<p>Voici un lien vers [un site internet](http://www.google.com)</p>
+
+<p>Et une ligne horizontale.</p>
+
+<p>***</p>
+
+<p>Voilà une série de mots sur une ligne :</p>
+
+<p>| des pommes encore</p>
+<p>| des oranges</p>
+<p>| des tomates</p>
+
+<p>les images peuvent être ajouter directement dans le texte comme ceci :![chaton](http://www.legorafi.fr/wp-content/uploads/2017/02/iStock-522851608-e1488272576715.jpg)</p>
+
+</p>
+</div>
+</div>
+<div class="element">
+<div class="markdown">
+{{#markdown}}
+
+# Un titre
+
+Les paragraphes sont séparés par un espace.
+
+Un second paragraphe. *Italique*, **gras**
+
+Les listes à puces ressembles à ça :
+
+* une première
+* une seconde
+* encore une autre
+
+> Les blocs de citation
+> sont écrits comme ceci
+>
+> Vous pouvez multiplier les paragraphes
+> si vous le souhaitez
+
+## Un sous-titre
+
+Voici une liste numérotée:
+
+1. premier objet
+2. second objet
+3. troisième objet
+
+
+### Un intertitre
+
+Maintenant, une liste imbriquée dans une autre :
+
+1. En premier, prenez ces ingrédients :
+
+* carottes
+* céleri
+* lentilles
+
+2. Faites bouillir de l’eau.
+
+3. Placer les légumes dans la casserole.
+
+Voici un lien vers [un site internet](http://www.google.com)
+
+Et une ligne horizontale.
+
+***
+
+les images peuvent être ajouter directement dans le texte comme ceci :
+
+![chaton](http://www.legorafi.fr/wp-content/uploads/2017/02/iStock-522851608-e1488272576715.jpg)
+
+
+{{/markdown}}
+</div>
+</div>
+
+</div>
+</div>
+</template>
