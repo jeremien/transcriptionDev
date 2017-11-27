@@ -1,4 +1,4 @@
-isAdmin = new ReactiveVar(false);
+isAdmin = new ReactiveVar(true);
 
 Template.registerHelper(
     "isAdmin", () => {

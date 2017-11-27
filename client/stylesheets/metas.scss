@@ -1,18 +1,63 @@
+@import 'main';
 
 .metaAuto {
-
-  margin-top:100px;
+  margin-top: 100px;
 
   .container {
+    display: flex;
 
-    display:flex;
+    flex-direction:row;
+    width:80%;
+    height:100%;
+    color:$color5;
+    //background-color: $color4;
 
     .element {
 
+      width : 50%;
+      padding:10px;
+      //border: solid 1px black;
+
+      .metasAuto {
+        font-family: $font;
+        font-size: $size3+0.2;
+        color: $color5;
+      }
+
+      button {
+        //width: 100%;
+        background-color: $color;
+        color: $color3;
+        border:none;
+        padding: 10px;
+        margin-top: 5px;
+
+        &:hover {
+          background-color: $color3;
+          color: $color;
+          border: solid 1px $color;
+        }
+
+      }
+
+      input[type=text] {
+        width: 80%;
+        border: solid 1px $color;
+        padding: 5px;
+        color: $color;
+        background-color: $color3;
+
+        &:focus {
+          border: solid 1px $color2;
+          //background-color:$color6;
+          outline: none;
+        }
+      }
+
+      ul {
+        //list-style:
+        li {}
+      }
     }
-
-
   }
-
-
 }

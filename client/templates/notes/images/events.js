@@ -25,12 +25,14 @@ Template.uploadImages.events({
     console.log(this);
     var file = template.find('#fileInput').files[0];
     var legend = e.target.form.legend.value;
-    var parent_id = this._id; 
+    var parent_id = this._id;
+    //var meta = e.target.form.keywords.value;
+    var meta = form2js("form_meta_" + this._id);
     var type = "image";
     var image_id = null;
 
     if(this.hasOwnProperty("image_id")){
-      image_id = this.image_id; 
+      image_id = this.image_id;
     }
 
     if(file){
@@ -57,10 +59,13 @@ Template.uploadImages.events({
             n.image_id = fileObj._id;
             n.legend = legend;
             n.meta = form2js("form_meta_" + this._id);
+
             n.save();
           } else {
             // Création d'une nouvelle note avec une nouvelle image
-            n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend });
+            //n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend });
+            n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend, meta:meta });
+            //console.log(meta)
             n.save();
           }
           $(".action").hide();

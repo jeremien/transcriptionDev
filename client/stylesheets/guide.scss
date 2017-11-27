@@ -9,7 +9,9 @@
 
   .intro {
     //border:solid 1px green;
-    padding:8%;
+    //padding:8%;
+    padding-right:8%;
+    padding-left:8%;
     width:60%;
     font-family: $font;
 
@@ -61,7 +63,7 @@
 
       .markdown {
         font-family: $font;
-        padding-bottom:15%;
+        padding-bottom:20px;
 
         h1 {
           font-size: $size2+1.3;
