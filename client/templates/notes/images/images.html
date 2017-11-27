@@ -7,12 +7,13 @@
   <form name="form_{{_id}}">
       <h4>Ajouter une image</h4>
       <input id="fileInput" type="file" />
-      <h4>ou ajouter l'url d'une image</h4>
-      <input id="linkinput" type="text" placeholder="url" />
-      <h4>Ajouter une légende</h4>
       {{#if editing _id}}
+      <h4>ou ajouter l'url d'une image</h4>
+      <input id="linkinput" type="text" placeholder="url" value="{{link}}" />
+      <h4>Ajouter une légende</h4>
       <textarea name="legend" class="textImage" placeholder="commenter l'image">{{legend}}</textarea>
       {{else}}
+      <input id="linkinput" type="text" placeholder="url" />
       <textarea name="legend" class="textImage" placeholder="commenter l'image"></textarea>
       {{/if}}
       <button type="submit" id="validerImage" value="Valider l'image">Valider l'image</button>

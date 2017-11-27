@@ -31,6 +31,8 @@ Template.uploadImages.events({
     var type = "image";
     var image_id = null;
 
+
+
     var self = this;
 
     if(file){
@@ -74,18 +76,20 @@ Template.uploadImages.events({
 
       uploadInstance.start();
     } else {
-      var url = template.find('#linkinput').value;
-      console.log(url);
-      if(url==""){
+      var link = template.find('#linkinput').value;
+      console.log(link);
+      if(link==""){
             var n = Note.findOne({image_id:image_id});
             n.meta = form2js("form_meta_" + this._id);
             n.save();
             $(".action").hide();
             selectedNote.set(null);
       } else {
-        n = new Note({type:"image", parent_id:parent_id, link: url, legend:legend });
-        n.save();
+        //n = new Note({type:"image", parent_id:parent_id, link: link, legend:legend });
+        self.link = link;
+        self.save();
         $(".action").hide();
+        selectedNote.set(null);
       }
     }
   }
