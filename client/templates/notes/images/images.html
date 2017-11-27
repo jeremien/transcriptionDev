@@ -9,11 +9,10 @@
       <input id="fileInput" type="file" />
       <h4>ou ajouter l'url d'une image</h4>
       <input id="linkinput" type="text" placeholder="url" />
-      {{#if editing _id}}
       <h4>Ajouter une légende</h4>
+      {{#if editing _id}}
       <textarea name="legend" class="textImage" placeholder="commenter l'image">{{legend}}</textarea>
       {{else}}
-      <h4>Ajouter une légende</h4>
       <textarea name="legend" class="textImage" placeholder="commenter l'image"></textarea>
       {{/if}}
       <button type="submit" id="validerImage" value="Valider l'image">Valider l'image</button>

@@ -31,9 +31,7 @@ Template.uploadImages.events({
     var type = "image";
     var image_id = null;
 
-    if(this.hasOwnProperty("image_id")){
-      image_id = this.image_id;
-    }
+    var self = this;
 
     if(file){
 
@@ -53,23 +51,21 @@ Template.uploadImages.events({
         } else {
           //window.alert('File "' + fileObj.name + '" successfully uploaded');
 
-          if(image_id){
+          if(selectedNote.get() === self._id){
             // Mise à jour d'une image existante
-            var n = Note.findOne({image_id:image_id});
-            n.image_id = fileObj._id;
-            n.legend = legend;
-            n.meta = form2js("form_meta_" + this._id);
-
-            n.save();
+            //var n = Note.findOne({image_id:image_id});
+            self.image_id = fileObj._id;
+            self.legend = legend;
+            self.meta = meta; //form2js("form_meta_" + self._id);
+            self.save();
+            selectedNote.set(null);
           } else {
             // Création d'une nouvelle note avec une nouvelle image
             //n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend });
             n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend, meta:meta });
-            //console.log(meta)
             n.save();
           }
           $(".action").hide();
-          selectedNote.set(null);
 
         }
 
