@@ -20,6 +20,15 @@ Template.uploadImages.helpers({
 
 Template.uploadImages.events({
 
+  "change #fileInput": function(e,t){
+    console.log("Change...");
+    // Empty url input because we are switching to local image data
+    //$("#linkinput").val("poizeporizpoerizpeoirpzoeirpzoerizperoi");
+    console.log("form_" + this._id);
+    var v = t.find("#linkinput");
+    console.log(v);
+    v.value = "";
+  },
   'click #validerImage': function (e, template) {
     e.preventDefault();
     console.log(this);
@@ -65,12 +74,14 @@ Template.uploadImages.events({
             self.image_id = fileObj._id;
             self.legend = data.legend;
             self.meta = data.meta; //form2js("form_meta_" + self._id);
+            self.link = "";
             self.save();
             selectedNote.set(null);
           } else {
             // Création d'une nouvelle note avec une nouvelle image
             //n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend });
             data.image_id = fileObj._id;
+            data.link = "";
             //n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend, meta:meta });
             n = new Note(data);
             n.save();
@@ -86,12 +97,14 @@ Template.uploadImages.events({
     } else {
       var link = template.find('#linkinput').value;
       data.link = link;
+      data.image_id = null;
       console.log(data);
 
       if(selectedNote.get() === self._id){
         self.link = data.link;
         self.legend = data.legend;
         self.meta = data.meta;
+        self.image_id = null;
         self.save();
         selectedNote.set(null);
       }else{
