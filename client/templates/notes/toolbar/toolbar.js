@@ -50,6 +50,7 @@ Template.noteToolBar.events({
     var n = new Note(doc)
     // TODO : Data validation in Model !
     n.save()
+    $(':input','.ui-autocomplete-input').val('');
     $(".action").hide();
   },
 
