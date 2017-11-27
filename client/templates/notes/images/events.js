@@ -32,7 +32,13 @@ Template.uploadImages.events({
     var image_id = null;
 
 
-
+    var data = {
+      legend: legend,
+      parent_id: parent_id,
+      meta: meta,
+      type: "image"  
+    };
+    // this est un chapitre !!
     var self = this;
 
     if(file){
@@ -57,14 +63,16 @@ Template.uploadImages.events({
             // Mise à jour d'une image existante
             //var n = Note.findOne({image_id:image_id});
             self.image_id = fileObj._id;
-            self.legend = legend;
-            self.meta = meta; //form2js("form_meta_" + self._id);
+            self.legend = data.legend;
+            self.meta = data.meta; //form2js("form_meta_" + self._id);
             self.save();
             selectedNote.set(null);
           } else {
             // Création d'une nouvelle note avec une nouvelle image
             //n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend });
-            n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend, meta:meta });
+            data.image_id = fileObj._id;
+            //n = new Note({type:"image", parent_id:parent_id, image_id:fileObj._id, legend:legend, meta:meta });
+            n = new Note(data);
             n.save();
           }
           $(".action").hide();
@@ -77,20 +85,34 @@ Template.uploadImages.events({
       uploadInstance.start();
     } else {
       var link = template.find('#linkinput').value;
-      console.log(link);
-      if(link==""){
-            var n = Note.findOne({image_id:image_id});
-            n.meta = form2js("form_meta_" + this._id);
-            n.save();
-            $(".action").hide();
-            selectedNote.set(null);
-      } else {
-        //n = new Note({type:"image", parent_id:parent_id, link: link, legend:legend });
-        self.link = link;
+      data.link = link;
+      console.log(data);
+
+      if(selectedNote.get() === self._id){
+        self.link = data.link;
+        self.legend = data.legend;
+        self.meta = data.meta;
         self.save();
-        $(".action").hide();
         selectedNote.set(null);
+      }else{
+        var n = new Note(data);
+        n.save();
+        $(".action").hide();
       }
+      // if(link==""){
+      //       console.log("Error...");
+      //       //  var n = Note.findOne({image_id:image_id});
+      //       //  n.meta = form2js("form_meta_" + this._id);
+      //       //  n.save();
+      //       //  $(".action").hide();
+      //       //  selectedNote.set(null);
+      // } else {
+      //   //n = new Note({type:"image", parent_id:parent_id, link: link, legend:legend });
+      //   self.link = link;
+      //   self.save();
+      //   $(".action").hide();
+      //   selectedNote.set(null);
+      // }
     }
   }
 });
