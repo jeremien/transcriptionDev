@@ -30,14 +30,14 @@ Template.noteToolBar.helpers({
 
 
 Template.noteToolBar.events({
-  'click input': function(e){
+  /*'click input': function(e){
     console.log('click');
     e.currentTarget.value = "";
-  },
-  'click textarea': function(e){
+  },*/
+  /*'click textarea': function(e){
     console.log('click');
     e.currentTarget.value = "";
-  },
+  },*/
   "click .addTexteNoteButton": function(event, t) {
     event.preventDefault();
 
