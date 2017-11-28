@@ -1,0 +1,26 @@
+
+@media print {
+
+  .navbar {
+    display:none;
+  }
+
+  .footer {
+
+    display:none;
+
+  }
+
+  #flux {
+
+    .btnNotePrincipale {
+      display:none;
+    }
+
+    .btnNoteSecondaire {
+      display:none;
+    }
+
+  }
+
+}

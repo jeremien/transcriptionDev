@@ -19,6 +19,8 @@ Template.metasAutocomplete.events({
     //e.target.value ='';
   },
   'click .delete-meta': function(e) {
-    console.log("click");
+    if(confirm('are you sure?')){
+      Meteor.call('deleteMeta', this._id);
+    }
   }
 });
