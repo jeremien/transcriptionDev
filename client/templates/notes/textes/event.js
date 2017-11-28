@@ -10,6 +10,10 @@ Template.blockTexte.events({
     var element = t.find("#new_value_for_"+this._id);
     this.meta = form2js("form_meta_" + this._id);
     this.content = element.value;
+    if(!this.content){
+      toastr.warning("Impossible d'ajouter une note vide !");
+      return;
+    }
     this.save();
     selectedNote.set(null);
   }

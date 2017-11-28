@@ -49,6 +49,14 @@ Template.noteToolBar.events({
     event.target.form.content.value = "";
     var n = new Note(doc)
     // TODO : Data validation in Model !
+
+    if(!n.content){
+      toastr.warning("Impossible d'ajouter une note vide !");
+      return;
+    }
+
+
+
     n.save()
     $(':input','.ui-autocomplete-input').val('');
     $(".action").hide();

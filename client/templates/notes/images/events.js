@@ -24,9 +24,7 @@ Template.uploadImages.events({
     console.log("Change...");
     // Empty url input because we are switching to local image data
     //$("#linkinput").val("poizeporizpoerizpeoirpzoeirpzoerizperoi");
-    console.log("form_" + this._id);
     var v = t.find("#linkinput");
-    console.log(v);
     v.value = "";
   },
   'click #validerImage': function (e, template) {
@@ -39,14 +37,22 @@ Template.uploadImages.events({
     var meta = form2js("form_meta_" + this._id);
     var type = "image";
     var image_id = null;
+    var link = template.find('#linkinput').value;
 
 
     var data = {
       legend: legend,
       parent_id: parent_id,
       meta: meta,
-      type: "image"  
+      type: "image",
+      link: link  
     };
+
+    if(!file && !link){
+      toastr.warning("Impossible d'ajouter une note vide !");
+      return;
+    }
+    
     // this est un chapitre !!
     var self = this;
 
@@ -95,7 +101,6 @@ Template.uploadImages.events({
 
       uploadInstance.start();
     } else {
-      var link = template.find('#linkinput').value;
       data.link = link;
       data.image_id = null;
       console.log(data);
