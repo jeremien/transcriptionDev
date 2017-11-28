@@ -30,15 +30,14 @@
 
 
 <template name="blocImage">
-
+  {{> note_tools}}
   {{#if editing _id}}
     <div class="container-modifImage">
-
-    <div class="item">
-      {{> formMeta}}
-    {{> uploadImages}}
-     <button class="event_cancelEditNote">Annuler</button>
-     </div>
+      <div class="item">
+        {{> formMeta}}
+        {{> uploadImages}}
+        <button class="event_cancelEditNote">Annuler</button>
+      </div>
     </div>
   {{else}}
 

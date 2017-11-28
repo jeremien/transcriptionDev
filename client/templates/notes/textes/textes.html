@@ -17,8 +17,9 @@
 </template>
 
 <template name="blockTexte">
+  {{> note_tools}}
 
-   {{> date date=createdAt}}
+  {{> date date=createdAt}}
   {{#if editing _id}}
   <div class="container-modifNote">
     <div class="item">

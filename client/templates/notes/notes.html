@@ -1,0 +1,10 @@
+<template name="note_tools">
+  <div class="note_tools">
+    {{#if isAdmin}}
+      {{#if isNote}}
+        <button data-menu="all_{{_id}}" data-edit="true" class="event_showFormToEditNote">E</button>
+      {{/if}}
+      <button class="event_removeNote">X</button>
+    {{/if}}
+  </div>
+</template>

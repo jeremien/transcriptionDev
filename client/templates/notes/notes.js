@@ -1,38 +1,4 @@
-// meta autocompletion
-
-Template.formMeta.rendered = function() {
-  //AutoCompletion.init("input[name=participants]");
-  //AutoCompletion.init("input[name=subjects]");
-  AutoCompletion.init("input[name=keywords]");
-  //AutoCompletion.enableLogging = true;
-}
-
-Template.formMeta.events = {
-  'keyup input[name=keywords]': function() {
-    AutoCompletion.autocomplete({
-      element: 'input[name=keywords]', // DOM identifier for the element
-      collection: Metas, // MeteorJS collection object
-      field: 'keywords', // Document field name to search for
-      limit: 0, // Max number of elements to show
-      sort: {
-        name: 1
-      }
-    }); // Sort object to filter results with
-    //filter: { 'gender': 'female' }}); // Additional filtering
-  }
-}
-
-//Template.noteToolBar.helpers({
-//  isNote: function(){
-//    return this.parent_id!=null;
-//  }
-//});
-Template.registerHelper("isNote", function() {
-    return this.parent_id!=null;
-});
-
-
-Template.noteToolBar.events({
+Template.note_tools.events({
   /*'click input': function(e){
     console.log('click');
     e.currentTarget.value = "";
@@ -94,3 +60,4 @@ Template.noteToolBar.events({
 
 
 })
+

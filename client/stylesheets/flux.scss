@@ -37,6 +37,8 @@
     font-family: $font;
     font-size: $size3+0.2;
     color: $color5;
+    min-height: 200px;
+    padding-left:40px;
   }
 
   button {
@@ -200,7 +202,7 @@
 
       .imageBloc {
         width: 80%;
-        padding: 5px;
+        //padding: 5px;
       }
     }
   }
