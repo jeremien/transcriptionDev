@@ -46,8 +46,14 @@ body {
 
     .navbar-text {
       color:$color2;
-
       padding-top:2px;
+    }
+
+    .navbar-info {
+      color:$color;
+      padding-top:2px;
+      float: right;
+      margin : 15px;
     }
   }
 
