@@ -26,16 +26,17 @@
 
       button {
         //width: 100%;
-        background-color: $color;
-        color: $color3;
-        border:none;
-        padding: 10px;
-        margin-top: 5px;
+        background-color: $color3;
+        color: $color2;
+        border: solid $color2 1px;
+        //padding: 10px;
+        //margin-top: 5px;
+        margin-left:10px;
 
         &:hover {
-          background-color: $color3;
-          color: $color;
-          border: solid 1px $color;
+          background-color: $color2;
+          color: $color3;
+          //border: solid 1px $color;
         }
 
       }

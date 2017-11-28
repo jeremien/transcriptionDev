@@ -8,6 +8,21 @@
   color:$color5;
   background-color: $color4;
 
+  textarea {
+    width: 100%;
+    height:60%;
+    border: solid 1px $color;
+    padding:5px;
+    color:$color;
+    background-color: $color3;
+
+    &:focus {
+      border: solid 1px $color2;
+      //background-color:$color6;
+      outline: none;
+    }
+  }
+
   input[type=text] {
     width: 100%;
     border: solid 1px $color;
