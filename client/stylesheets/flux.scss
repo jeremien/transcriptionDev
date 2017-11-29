@@ -6,6 +6,13 @@
   //background-color:red;
   align-items: center;
   margin-top: 5%;
+  padding-bottom: 100px;
+
+  .ajouter {
+  font-family: $font;
+  font-size: $size2;
+  color:$color;
+}
 
   .date {
     border-bottom: solid 2px $color;
@@ -44,7 +51,7 @@
   button {
     //border: none;
     //color: $color;
-    //font-size: 1.2rem;
+    //font-size: $size;
     display: inline-block;
     text-align: center;
     border-radius: 0;
@@ -56,6 +63,7 @@
     padding: 5px;
     margin: 5px;
     background-color: $color;
+    float: right;
 
     &:before {
       font-family: fontAwesome;
@@ -75,6 +83,7 @@
     padding: 5px;
     margin: 5px;
     background-color: $color2;
+    float: right;
 
     &:before {
       font-family: fontAwesome;
@@ -93,8 +102,8 @@
     border: none;
     padding: 5px;
     margin: 5px;
-
     background-color: $color4;
+    float: right;
 
     &:before {
       font-family: fontAwesome;
@@ -109,10 +118,11 @@
   }
 
   .btnNotePrincipale {
-    margin-top: 30px;
+    margin-top: 10px;
     //border-bottom: solid 1px $color2;
     //background-color:$color;
-    //font-size:$size3;
+    font-size:$size3;
+    //text-align: center;
   }
 
   .btnNoteSecondaire {
@@ -123,20 +133,21 @@
 
   ol {
     border-left: solid 2px $color2;
-    width: 90%;
+    width: 95%;
     //padding:20px;
     list-style-type: decimal-leading-zero;
     //font-weight: bold;
     color: $color;
 
     li {
-      padding: 10px;
+      //padding: 10px;
       //margin:2%;
 
       .note {
 
         h1 {
           font-size:$size2+1.3;
+
         }
 
         h2 {
@@ -152,7 +163,7 @@
         }
 
         p {
-          width: 80%;
+          width: 70%;
           font-size: $size2;
           line-height:$size+1.2;
           //margin-top: 30px;
@@ -217,7 +228,7 @@
       }
 
       .imageBloc {
-        width: 80%;
+        width: 60%;
         padding-left: 10px;
         //padding: 5px;
       }

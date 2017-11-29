@@ -4,11 +4,11 @@
 <template name="noteToolBar">
   <div class="toolBar">
 
-    <button class="event_showFormToAddNewNote" data-menu="all_{{_id}}">Ajouter une note</button>
+    <button class="event_showFormToAddNewNote" data-menu="all_{{_id}}">Commenter</button>
     {{#if isAdmin}}
-    <button style="float:right" class="event_removeNote">Supprimer</button>
+    <button class="event_removeNote">Supprimer</button>
       {{#if isNote}}
-        <button style="float:right" data-menu="all_{{_id}}" data-edit="true" class="event_showFormToEditNote">Éditer</button>
+        <button data-menu="all_{{_id}}" data-edit="true" class="event_showFormToEditNote">Éditer</button>
       {{/if}}
     {{/if}}
     <!--
