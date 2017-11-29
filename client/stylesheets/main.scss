@@ -1,7 +1,8 @@
 $font: 'Anarchy Book', arial, sans-serif;
 $font2: 'Computer Modern Concrete', times, serif;
 //couleurs
-$color: #641894;
+
+$color:black;
 $color2: rgb(213, 22, 114);
 $color3: white;
 $color4: rgb(70, 186, 47);
@@ -9,6 +10,8 @@ $color5: black;
 $color6: rgba(126, 126, 126, 0.31);
 $color7: rgb(213, 213, 213); //$color7:
 $color8: rgba(221, 221, 221, 0.40);
+$color9: #641894;
+
 //font-size
 $size: 1.2rem;
 $size2: 1.8rem;
@@ -75,14 +78,14 @@ body {
 
       button {
         background-color: $color3;
-        color: $color4;
-        border: solid 1px $color4;
+        color: $color;
+        border: solid 1px $color;
         padding: 3px;
         //margin-top: 5px;
         border-radius: 0;
 
         &:hover {
-          background-color: $color4;
+          background-color: $color;
           color: $color3;
           //border: solid 1px $color;
         }

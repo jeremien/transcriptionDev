@@ -1,11 +1,24 @@
 @import 'main';
 
+#chapitres {
+  display:flex;
+  width:100%;
+  //border: solid 1px black;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  //background-color: $color;
+}
+
+
+
 
 #chapitresBar {
   display:flex;
   width:80%;
   //border: solid 1px black;
   flex-direction: column;
+  background-color: $color;
 
   h3 {
     font-size:$size2+1;
@@ -15,7 +28,7 @@
   border-bottom: solid 2px $color2;
   padding:20px;
   background-color:$color3;
-  font-family:$font;
+  //font-family:$font;
 
   .chapDiv {
 

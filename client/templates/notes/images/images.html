@@ -1,22 +1,22 @@
 <template name="uploadImages">
 
   {{#with currentUpload}}
-    Uploading <b>{{file.name}}</b>:
+    Téléchargement <b>{{file.name}}</b>:
     <span id="progress">{{progress.get}}%</span>
   {{else}}
   <form name="form_{{_id}}">
-      <h4>Ajouter une image</h4>
-      <input id="fileInput" type="file" />
+      <h4>IMAGE</h4>
+      <input id="fileInput" type="file"/>
       {{#if editing _id}}
-      <h4>ou ajouter l'url d'une image</h4>
-      <input id="linkinput" type="text" placeholder="url" value="{{url}}" />
-      <h4>Ajouter une légende</h4>
-      <textarea name="legend" class="textImage" placeholder="commenter l'image">{{legend}}</textarea>
+      <h4>ou</h4>
+      <input id="linkinput" type="text" placeholder="Entrez l'URL de votre image" value="{{url}}" />
+      <h4>et</h4>
+      <textarea name="legend" class="textImage" rows="4" cols="20" placeholder="Ajoutez une légende">{{legend}}</textarea>
       {{else}}
-      <h4>ou ajouter l'url d'une image</h4>
-      <input id="linkinput" type="text" placeholder="url" />
-      <h4>Ajouter une légende</h4>
-      <textarea name="legend" class="textImage" placeholder="commenter l'image"></textarea>
+      <h4>ou</h4>
+      <input id="linkinput" type="text" placeholder="Entrez l'URL de votre image" />
+      <h4>et</h4>
+      <textarea name="legend" class="textImage" rows="4" cols="20" placeholder="Ajoutez une légende"></textarea>
       {{/if}}
       <button type="submit" id="validerImage" value="Valider l'image">Valider l'image</button>
   </form>

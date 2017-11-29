@@ -4,9 +4,9 @@
 <template name="noteToolBar">
   <div class="toolBar">
 
-    <button class="event_showFormToAddNewNote" data-menu="all_{{_id}}">Commenter</button>
+    <button class="event_showFormToAddNewNote" data-menu="all_{{_id}}">Annoter&nbsp;</button>
     {{#if isAdmin}}
-    <button class="event_removeNote">Supprimer</button>
+    <button class="event_removeNote">Supprimer&nbsp;</button>
       {{#if isNote}}
         <button data-menu="all_{{_id}}" data-edit="true" class="event_showFormToEditNote">Éditer</button>
       {{/if}}
@@ -25,15 +25,24 @@
 
 <template name="addAll">
   <div id="all_{{_id}}" class="action addAll">
+
     <div class="container-ajoutnote">
-      <div class="element">
+      <div class="element_haut">
         {{> formMeta }}
-        {{> addTexte}}
       </div>
-      <div class="element">
-      <!--{{> formMeta }}-->
-      {{> addImage}}
+
+      <div class="container-elements">
+        <div class="element">
+
+          {{> addTexte}}
+        </div>
+
+        <div class="element">
+        <!--{{> formMeta }}-->
+        {{> addImage}}
+        </div>
       </div>
+
 
     </div>
   </div>
@@ -53,7 +62,7 @@
       </div>-->
       <div class="form-group">
         <!--<h4>Ajouter des mots-clés</h4>-->
-        <input name="keywords" type="text" value="{{meta.keywords}}" placeholder="ajouter des mots-clés">
+        <input name="keywords" type="text" value="{{meta.keywords}}" placeholder="Entrez des mots-clés">
       </div>
     </form>
   </div>
