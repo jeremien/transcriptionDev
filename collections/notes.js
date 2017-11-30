@@ -49,10 +49,12 @@ Note = class Note extends Model {
     var data = {type:this.type, createdAt: this.createdAt, updatedAt:this.updatedAt};
     if(this.type == "image"){
       data.url = this.url();
+			data.legend = this.legend;
     }
     if(this.type == "text"){
       data.content = this.content;
     }
+		data.meta = this.meta;
     return data;
   }
 
