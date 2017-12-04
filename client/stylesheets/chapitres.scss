@@ -10,10 +10,8 @@
   //background-color: $color;
   margin-left: 2%;
   margin-right: 2%;
+  margin-bottom: 5%;
 }
-
-
-
 
 #chapitresBar {
   display:flex;
@@ -40,7 +38,6 @@
       color:$color4;
       cursor:pointer;
     }
-
   }
 
     input {
@@ -56,7 +53,5 @@
         outline: none;
       }
     }
-
   }
-
 }

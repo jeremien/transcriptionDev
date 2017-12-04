@@ -13,6 +13,71 @@
 
   #flux {
 
+    font-family: "helvetica", sans-serif;
+    margin-left: 10mm;
+
+    h1 {
+      font-size: 14px;
+    }
+
+    ol {
+      border: none;
+      width: 100%;
+      margin:0;
+      padding: 0;
+      list-style-type: decimal-leading-zero;
+
+
+      li {
+        border:none;
+        padding-left: 1cm;
+
+        img {
+          padding: 5mm;
+        }
+
+        .date {
+          display: none;
+        }
+
+        .meta {
+          display: none;
+        }
+
+        .legende {
+          font-family: "helvetica", sans-serif;
+          font-style: normal;
+          font-size: 9pt;
+        }
+
+        .imageBloc {
+          //padding: 5mm;
+        }
+
+        .note {
+          //padding-left: 0;
+          margin:0;
+          padding: 0;
+          font-family: "helvetica", sans-serif;
+          min-height: 100%;
+
+          h1, h2, h3, h4 {
+            font-size: 11pt;
+            line-height: 13pt;
+          }
+
+          p {
+            font-size: 9pt;
+            line-height: 11pt;
+            margin:0;
+            padding: 0;
+          }
+        }
+
+
+      }
+    }
+
     .ajouter {
       display: none;
     }
@@ -22,6 +87,10 @@
     }
 
     .btnNoteSecondaire {
+      display:none;
+    }
+
+    .note_tools {
       display:none;
     }
 
