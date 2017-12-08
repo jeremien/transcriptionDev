@@ -29,7 +29,7 @@ Template.uploadImages.events({
   },
   'click #validerImage': function (e, template) {
     e.preventDefault();
-    console.log(this);
+    //console.log(this);
     var file = template.find('#fileInput').files[0];
     var legend = e.target.form.legend.value;
     var parent_id = this._id;
@@ -45,14 +45,16 @@ Template.uploadImages.events({
       parent_id: parent_id,
       meta: meta,
       type: "image",
-      link: link  
+      link: link
     };
+
+    console.log(data)
 
     if(!file && !link){
       toastr.warning("Impossible d'ajouter une note vide !");
       return;
     }
-    
+
     // this est un chapitre !!
     var self = this;
 
@@ -103,7 +105,7 @@ Template.uploadImages.events({
     } else {
       data.link = link;
       data.image_id = null;
-      console.log(data);
+      //console.log(data);
 
       if(selectedNote.get() === self._id){
         self.link = data.link;
